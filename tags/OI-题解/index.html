@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/archives/2021/"/>
+  <link rel="canonical" href="http://example.com/tags/oi-题解/"/>
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,14 +20,14 @@
   <meta content="Fieshy&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1628762910125" as="style">
+  <link rel="preload" href="/css/style.css?time=1628762910141" as="style">
   <!-- 页面元数据 -->
-  <title>归档：2021 - Fieshy's Blog</title>
+  <title>标签：OI/题解 - Fieshy's Blog</title>
   <meta name="keywords" content="null">
   <meta name="description" content=" - John Doe - Fieshy's Blog">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Fieshy&#39;s Blog">
-<meta property="og:url" content="http://example.com/archives/2021/index.html">
+<meta property="og:url" content="http://example.com/tags/OI-%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Fieshy&#39;s Blog">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png">
@@ -1932,8 +1932,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1628762910125" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1628762910125"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1628762910141" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1628762910141"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -1985,7 +1985,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files head end-->
 </head>
   <body>
-    <header id="l_header" class="l_header auto floatable shadow " style='opacity: 0' >
+    <header id="l_header" class="l_header auto floatable shadow show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2593,7 +2593,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-        <div id="half" class='cover-wrapper  dock' style="display: ;">
+        <div id="none" class='cover-wrapper  dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://i.loli.net/2021/07/22/e5ipzrXWDaToSPA.jpg"></div>
           
@@ -2667,14 +2667,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper" id="pjax-container">
           
+
 <div id="l_main" class=''>
-	
-		
+  
+    
+      
   <section class="post-list">
     
       
-        
-          
         
           
         
@@ -2732,50 +2732,6 @@ $3. \max(h_i,h_j) &lt; \min(h_{i+1},h_...
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/12/hello-world/">
-        Hello World
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-08-12</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/08/12/hello-world/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -2783,7 +2739,8 @@ Qu...
   
 
 
-	
+    
+  
 </div>
 <aside id='l_side'>
   
@@ -2907,14 +2864,14 @@ Qu...
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="half";
-      cover_wrapper.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
       scroll_down.style.display="none";
     
   
@@ -3441,7 +3398,7 @@ Qu...
       volantis.APlayerController = {};
     
     volantis.import.jQuery().then(()=>{
-      volantis.js('/js/rightMenu.js?time=1628762910125') // 此处依赖JQ
+      volantis.js('/js/rightMenu.js?time=1628762910141') // 此处依赖JQ
     })
   </script>
 
@@ -3456,19 +3413,19 @@ Qu...
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1628762910125")
+        volantis.js("/js/plugins/sites.js?time=1628762910141")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1628762910125")
+        volantis.js("/js/plugins/friends.js?time=1628762910141")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1628762910125")
+        volantis.js("/js/plugins/contributors.js?time=1628762910141")
       }
     
   };
@@ -3588,7 +3545,7 @@ Qu...
 
 
 
-<script src="/js/app.js?time=1628762910125.js"></script>
+<script src="/js/app.js?time=1628762910141.js"></script>
 
 
 <!-- optional -->
@@ -3600,7 +3557,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
 function loadSearchService(){
   volantis.import.jQuery().then(()=>{
     // see: layout/_partial/scripts/cdnCtrl.ejs
-    volantis.js('/js/search/hexo.js?time=1628762910125',setSearchService); // 此处依赖JQ
+    volantis.js('/js/search/hexo.js?time=1628762910141',setSearchService); // 此处依赖JQ
   })
   document.querySelectorAll('.input.u-search-input').forEach((e)=>{
     e.removeEventListener('focus',loadSearchService,false)
@@ -3857,8 +3814,8 @@ function setSearchService() {
   <script>
   volantis.message = (title, message, icon = 'fas fa-info-circle light-blue', time = '5000', position = 'topRight', done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1628762910125')
-      volantis.js('/js/message.js?time=1628762910125', () => {
+      volantis.css('/css/message.css?time=1628762910141')
+      volantis.js('/js/message.js?time=1628762910141', () => {
         tozashMessage(title, message, icon, time, position, done);
       });
     } else {
@@ -3891,8 +3848,8 @@ function setSearchService() {
 
   volantis.question = (title, message, success = null, cancel = null, done = null, icon = 'fas fa-question-circle light-blue', time = '20000') => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1628762910125')
-      volantis.js('/js/message.js?time=1628762910125', () => {
+      volantis.css('/css/message.css?time=1628762910141')
+      volantis.js('/js/message.js?time=1628762910141', () => {
         tozashQuestion(title, message, icon , time, success, cancel, done);
       });
     } else {
