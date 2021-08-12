@@ -20,7 +20,7 @@
   <meta content="Fieshy&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1628762910125" as="style">
+  <link rel="preload" href="/css/style.css?time=1628763854110" as="style">
   <!-- 页面元数据 -->
   <title>归档：2021 - Fieshy's Blog</title>
   <meta name="keywords" content="null">
@@ -1932,8 +1932,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1628762910125" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1628762910125"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1628763854110" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1628763854110"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2286,6 +2286,43 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
           
           
+            
+            
+              
+                <li>
+                  <a class="menuitem flat-box">
+                    <i class='fas fa-compact-disc fa-fw music'></i>背景音乐
+                  </a>
+                  <ul class="list-v">
+                    <li>
+                      <div class="aplayer-container">
+                        
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+                      </div>
+                    </li>
+                  </ul>
+                <li>
+              
+            
+          
+          
 				</ul>
 			</div>
 
@@ -2576,6 +2613,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
           
             
+              
+            
+              
+            
+          
+            
           </ul>
         </li>
 			</ul>
@@ -2593,7 +2636,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-        <div id="half" class='cover-wrapper  dock' style="display: ;">
+        <div id="half" class='cover-wrapper  focus' style="display: ;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://i.loli.net/2021/07/22/e5ipzrXWDaToSPA.jpg"></div>
           
@@ -2929,6 +2972,22 @@ Qu...
       
         <div class="aplayer-container">
           
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
 
 
         </div>
@@ -3423,6 +3482,28 @@ Qu...
         
       
         
+          <div id="menuMusic">
+            <li class='music name menuOption-Content'>
+              <p class='nav music-title fix-cursor-default'></p>
+            </li>
+            <li class='music ctrl'>
+              <a class='nav icon-only backward fix-cursor-default' onclick='volantis.rightMenu.aplayerBackward()'><i class='fa fa-step-backward fa-fw '></i></a>
+              <a class='nav icon-only toggle fix-cursor-default' onclick='volantis.rightMenu.aplayerToggle()'><i class='fa fa-play fa-fw '></i></a>
+              <a class='nav icon-only forward fix-cursor-default' onclick='volantis.rightMenu.aplayerForward()'><i class='fa fa-step-forward fa-fw '></i></a>
+            </li>
+            <li class='music volume'>
+              <a class='nav volume'>
+                <div class="aplayer-volume-bar-wrap">
+                  <div class="aplayer-volume-bar fix-cursor-pointer">
+                    <div class="aplayer-volume"></div>
+                    <i class='left fa fa-volume-off fa-fw'></i>
+                    <i class='right fa fa-volume-up fa-fw'></i>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </div>
+        
       
     </ul>
   </div>
@@ -3431,6 +3512,26 @@ Qu...
     volantis.rightMenu = {};
     volantis.rightMenu.faicon = 'fa' || 'fa';
     
+      volantis.rightMenu.music = true;
+      volantis.rightMenu.aplayerBackward = () => {
+        event.stopPropagation();
+        if (MainAPlayer.aplayerBackward) {
+          MainAPlayer.aplayerBackward();
+        }
+      }
+      volantis.rightMenu.aplayerToggle = () => {
+        event.stopPropagation();
+        if (MainAPlayer.aplayerToggle) {
+          MainAPlayer.aplayerToggle();
+        }
+      }
+      volantis.rightMenu.aplayerForward = () => {
+        event.stopPropagation();
+        if (MainAPlayer.aplayerForward) {
+          MainAPlayer.aplayerForward();
+        }
+      }
+    
     
       volantis.rightMenu.defaultStyles = true;
     
@@ -3438,10 +3539,8 @@ Qu...
     
     
     
-      volantis.APlayerController = {};
-    
     volantis.import.jQuery().then(()=>{
-      volantis.js('/js/rightMenu.js?time=1628762910125') // 此处依赖JQ
+      volantis.js('/js/rightMenu.js?time=1628763854110') // 此处依赖JQ
     })
   </script>
 
@@ -3456,19 +3555,19 @@ Qu...
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1628762910125")
+        volantis.js("/js/plugins/sites.js?time=1628763854110")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1628762910125")
+        volantis.js("/js/plugins/friends.js?time=1628763854110")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1628762910125")
+        volantis.js("/js/plugins/contributors.js?time=1628763854110")
       }
     
   };
@@ -3531,6 +3630,76 @@ Qu...
 
 
 
+  <script>
+  volantis.APlayerController = {};
+  volantis.APlayerController.id = '3175833810';  // 设定全局音乐播放ID
+  volantis.APlayerController.volume = '0.7';
+  volantis.css("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css");
+  // APlayer 需要在  MetingJS 之前加载
+  (async () => {
+    await volantis.js("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
+    await volantis.js("https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js")
+
+    
+      // 右键 music 需要在 APlayer  MetingJS 之后加载
+      await volantis.js('/js/aplayer.js?time=1628763854112')
+      volantis.APlayerController.music = true;
+    
+  })();
+// message see: /layout/_third-party/message/script.ejs
+
+  var checkMetings = setInterval(function() {
+  if (!document.querySelectorAll('meting-js')[0].aplayer) return;
+  if (!document.querySelectorAll('meting-js')[0].aplayer.on) return;
+  clearInterval(checkMetings);
+  try {
+    var Metings = document.querySelectorAll('meting-js');
+    Metings.forEach((item, index) => {
+      var rightMenuAplayer = $(item)[0].meta.id === volantis.APlayerController.id && volantis.APlayerController.music;
+      if(rightMenuAplayer)  MainAPlayer.checkAPlayer();
+      var thisAplayer =Metings[index].aplayer;
+      thisAplayer.on('play', function(e) {
+      let icon = document.getElementById('#aplayerHeaderIcon')
+      if(icon) volantis.dom.$(icon).removeClass('music').addClass('music')
+      var index = thisAplayer.list.index;
+      var title = thisAplayer.list.audios[index].title;
+      var artist = thisAplayer.list.audios[index].artist;
+        volantis.message(
+          '音乐通知',
+          '正在播放：' + title + ' - ' + artist,
+          'fas fa-play'
+        )
+        if(rightMenuAplayer) volantis.APlayerController.status = 'play';
+      });
+      thisAplayer.on('pause', function(e) {
+        let icon = document.getElementById('#aplayerHeaderIcon')
+        if(icon) volantis.dom.$(icon).removeClass('music')
+        var index =thisAplayer.list.index;
+        var title = thisAplayer.list.audios[index].title;
+        var artist = thisAplayer.list.audios[index].artist;
+        setTimeout(() => {
+          // 歌曲播放结束也会触发 pause 事件
+          if(thisAplayer.paused)
+            volantis.message(
+            '音乐通知',
+            '暂停播放：' + title + ' - ' + artist,
+            'fas fa-pause'
+            )
+        }, 100)
+        if(rightMenuAplayer) volantis.APlayerController.status = 'pause';
+      });
+      thisAplayer.on('error', function (e) {
+        if(rightMenuAplayer) volantis.APlayerController.status = 'error';
+      });
+    });
+
+  } catch (error) {
+
+  }
+}, 100);
+
+</script>
+
 
 
   <script>
@@ -3588,7 +3757,7 @@ Qu...
 
 
 
-<script src="/js/app.js?time=1628762910125.js"></script>
+<script src="/js/app.js?time=1628763854110.js"></script>
 
 
 <!-- optional -->
@@ -3600,7 +3769,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
 function loadSearchService(){
   volantis.import.jQuery().then(()=>{
     // see: layout/_partial/scripts/cdnCtrl.ejs
-    volantis.js('/js/search/hexo.js?time=1628762910125',setSearchService); // 此处依赖JQ
+    volantis.js('/js/search/hexo.js?time=1628763854110',setSearchService); // 此处依赖JQ
   })
   document.querySelectorAll('.input.u-search-input').forEach((e)=>{
     e.removeEventListener('focus',loadSearchService,false)
@@ -3857,8 +4026,8 @@ function setSearchService() {
   <script>
   volantis.message = (title, message, icon = 'fas fa-info-circle light-blue', time = '5000', position = 'topRight', done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1628762910125')
-      volantis.js('/js/message.js?time=1628762910125', () => {
+      volantis.css('/css/message.css?time=1628763854110')
+      volantis.js('/js/message.js?time=1628763854110', () => {
         tozashMessage(title, message, icon, time, position, done);
       });
     } else {
@@ -3891,8 +4060,8 @@ function setSearchService() {
 
   volantis.question = (title, message, success = null, cancel = null, done = null, icon = 'fas fa-question-circle light-blue', time = '20000') => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1628762910125')
-      volantis.js('/js/message.js?time=1628762910125', () => {
+      volantis.css('/css/message.css?time=1628763854110')
+      volantis.js('/js/message.js?time=1628763854110', () => {
         tozashQuestion(title, message, icon , time, success, cancel, done);
       });
     } else {
