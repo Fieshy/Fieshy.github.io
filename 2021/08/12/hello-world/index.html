@@ -20,7 +20,7 @@
   <meta content="Fieshy&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1628763854105" as="style">
+  <link rel="preload" href="/css/style.css?time=1628763891811" as="style">
   <!-- 页面元数据 -->
   <title>Hello World - Fieshy's Blog</title>
   <meta name="keywords" content="null">
@@ -1936,8 +1936,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1628763854105" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1628763854105"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1628763891811" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1628763891811"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -3591,7 +3591,7 @@ $2...</p>
     
     
     volantis.import.jQuery().then(()=>{
-      volantis.js('/js/rightMenu.js?time=1628763854104') // 此处依赖JQ
+      volantis.js('/js/rightMenu.js?time=1628763891811') // 此处依赖JQ
     })
   </script>
 
@@ -3606,19 +3606,19 @@ $2...</p>
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1628763854104")
+        volantis.js("/js/plugins/sites.js?time=1628763891811")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1628763854104")
+        volantis.js("/js/plugins/friends.js?time=1628763891811")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1628763854104")
+        volantis.js("/js/plugins/contributors.js?time=1628763891811")
       }
     
   };
@@ -3693,7 +3693,7 @@ $2...</p>
 
     
       // 右键 music 需要在 APlayer  MetingJS 之后加载
-      await volantis.js('/js/aplayer.js?time=1628763854107')
+      await volantis.js('/js/aplayer.js?time=1628763891814')
       volantis.APlayerController.music = true;
     
   })();
@@ -3808,7 +3808,7 @@ $2...</p>
 
 
 
-<script src="/js/app.js?time=1628763854105.js"></script>
+<script src="/js/app.js?time=1628763891811.js"></script>
 
 
 <!-- optional -->
@@ -3820,7 +3820,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
 function loadSearchService(){
   volantis.import.jQuery().then(()=>{
     // see: layout/_partial/scripts/cdnCtrl.ejs
-    volantis.js('/js/search/hexo.js?time=1628763854105',setSearchService); // 此处依赖JQ
+    volantis.js('/js/search/hexo.js?time=1628763891811',setSearchService); // 此处依赖JQ
   })
   document.querySelectorAll('.input.u-search-input').forEach((e)=>{
     e.removeEventListener('focus',loadSearchService,false)
@@ -4077,8 +4077,8 @@ function setSearchService() {
   <script>
   volantis.message = (title, message, icon = 'fas fa-info-circle light-blue', time = '5000', position = 'topRight', done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1628763854104')
-      volantis.js('/js/message.js?time=1628763854104', () => {
+      volantis.css('/css/message.css?time=1628763891811')
+      volantis.js('/js/message.js?time=1628763891811', () => {
         tozashMessage(title, message, icon, time, position, done);
       });
     } else {
@@ -4111,8 +4111,8 @@ function setSearchService() {
 
   volantis.question = (title, message, success = null, cancel = null, done = null, icon = 'fas fa-question-circle light-blue', time = '20000') => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1628763854104')
-      volantis.js('/js/message.js?time=1628763854104', () => {
+      volantis.css('/css/message.css?time=1628763891811')
+      volantis.js('/js/message.js?time=1628763891811', () => {
         tozashQuestion(title, message, icon , time, success, cancel, done);
       });
     } else {

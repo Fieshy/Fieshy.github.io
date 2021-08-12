@@ -20,7 +20,7 @@
   <meta content="Fieshy&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1628763854095" as="style">
+  <link rel="preload" href="/css/style.css?time=1628763891765" as="style">
   <!-- 页面元数据 -->
   <title>about - Fieshy's Blog</title>
   <meta name="keywords" content="null">
@@ -1934,8 +1934,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1628763854095" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1628763854095"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1628763891765" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1628763891765"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -3523,7 +3523,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
     volantis.import.jQuery().then(()=>{
-      volantis.js('/js/rightMenu.js?time=1628763854094') // 此处依赖JQ
+      volantis.js('/js/rightMenu.js?time=1628763891764') // 此处依赖JQ
     })
   </script>
 
@@ -3538,19 +3538,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1628763854095")
+        volantis.js("/js/plugins/sites.js?time=1628763891764")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1628763854095")
+        volantis.js("/js/plugins/friends.js?time=1628763891764")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1628763854095")
+        volantis.js("/js/plugins/contributors.js?time=1628763891764")
       }
     
   };
@@ -3625,7 +3625,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
     
       // 右键 music 需要在 APlayer  MetingJS 之后加载
-      await volantis.js('/js/aplayer.js?time=1628763854100')
+      await volantis.js('/js/aplayer.js?time=1628763891772')
       volantis.APlayerController.music = true;
     
   })();
@@ -3740,7 +3740,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<script src="/js/app.js?time=1628763854095.js"></script>
+<script src="/js/app.js?time=1628763891765.js"></script>
 
 
 <!-- optional -->
@@ -3752,7 +3752,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
 function loadSearchService(){
   volantis.import.jQuery().then(()=>{
     // see: layout/_partial/scripts/cdnCtrl.ejs
-    volantis.js('/js/search/hexo.js?time=1628763854095',setSearchService); // 此处依赖JQ
+    volantis.js('/js/search/hexo.js?time=1628763891765',setSearchService); // 此处依赖JQ
   })
   document.querySelectorAll('.input.u-search-input').forEach((e)=>{
     e.removeEventListener('focus',loadSearchService,false)
@@ -4009,8 +4009,8 @@ function setSearchService() {
   <script>
   volantis.message = (title, message, icon = 'fas fa-info-circle light-blue', time = '5000', position = 'topRight', done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1628763854094')
-      volantis.js('/js/message.js?time=1628763854095', () => {
+      volantis.css('/css/message.css?time=1628763891764')
+      volantis.js('/js/message.js?time=1628763891764', () => {
         tozashMessage(title, message, icon, time, position, done);
       });
     } else {
@@ -4043,8 +4043,8 @@ function setSearchService() {
 
   volantis.question = (title, message, success = null, cancel = null, done = null, icon = 'fas fa-question-circle light-blue', time = '20000') => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1628763854094')
-      volantis.js('/js/message.js?time=1628763854095', () => {
+      volantis.css('/css/message.css?time=1628763891764')
+      volantis.js('/js/message.js?time=1628763891764', () => {
         tozashQuestion(title, message, icon , time, success, cancel, done);
       });
     } else {
