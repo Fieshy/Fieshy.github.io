@@ -1,0 +1,15 @@
+- group: # 分组标题
+  description:  # 分组描述
+  items:
+    - title: lyslys2019 #名称
+      url: https://github.com/lyslys2019 # 链接
+      avatar: https://avatars.githubusercontent.com/u/53963644?v=4 # 头像
+      screenshot: # 截图
+      keywords: # 关键词
+      description: # 描述
+    - title: doflake # 名称
+      url: https://github.com/doflake # 链接
+      avatar: https://cdn.jsdelivr.net/gh/doflake/Picture/Card/Avatar-Dove.jpg # 头像
+      screenshot: # 截图
+      keywords: # 关键词
+      description: # 描述

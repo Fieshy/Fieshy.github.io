@@ -1,0 +1,26 @@
+- name: 博客
+  icon: fas fa-rss
+  url: /
+- name: 更多
+  icon: fas fa-ellipsis-v
+  rows:
+    - name: 背景音乐
+      icon: fas fa-compact-disc
+    - name: 主题源码
+      url: https://github.com/volantis-x/hexo-theme-volantis/
+    - name: 更新日志
+      url: https://github.com/volantis-x/hexo-theme-volantis/releases/
+    - name: 有疑问？
+      rows:
+        - name: 看 FAQ
+          url: faqs/
+        - name: 看 本站源码
+          url: https://github.com/volantis-x/volantis-docs/
+        - name: 提 Issue
+          url: https://github.com/volantis-x/hexo-theme-volantis/issues/
+    - name: 公告和测试博文
+      url: archives/
+    - name: 示例博客
+      url: examples/
+    - name: 特别感谢
+      url: contributors/

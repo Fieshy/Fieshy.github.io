@@ -1,0 +1,159 @@
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/<%- theme.info.theme_version %>'>
+  <%- meta_generator() %>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  <%_
+    function generate_seo() {
+      let robots_content="";
+      if (page.robots) {
+        robots_content = page.robots
+      } else if (theme.seo && theme.seo.robots) {
+        if (is_home()) {
+          if (page.prev == 0) {
+            robots_content=theme.seo.robots.home_first_page
+          }else{
+            robots_content=theme.seo.robots.home_other_pages
+          }
+        } else if (is_archive()) { 
+          robots_content=theme.seo.robots.archive
+        } else if (is_category()) {
+          robots_content=theme.seo.robots.category
+        } else if (is_tag()) {
+          robots_content=theme.seo.robots.tag
+        }
+      }
+      if(robots_content){
+        return `<meta name="robots" content="${robots_content}">`
+      }
+    }
+  _%>
+  <%- generate_seo() %>
+  <%- autoCanonical(config, page) %>
+  <!-- 渲染优化 -->
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta content="<%=config.title%>" name="application-name">
+  <meta content="<%=config.title%>" name="apple-mobile-web-app-title">
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="preload" href="<%- theme.cdn.map.css.style %>" as="style">
+  <!-- 页面元数据 -->
+  <%_
+    var title = page.seo_title || page.title;
+    var keywords = page.keywords || '';
+    var description = page.description || '';
+    if (is_archive()) {
+      title = __('navbar.archive');
+      if (is_month()) {
+        title += __('symbol.colon') + page.year + '/' + page.month;
+      } else if (is_year()) {
+        title += __('symbol.colon') + page.year;
+      }
+    } else if (is_category()) {
+      title = __('navbar.category') + __('symbol.colon') + page.category;
+    } else if (is_tag()) {
+      title = __('navbar.tag') + __('symbol.colon') + page.tag;
+    } else if (is_home() && page.prev == 0) {
+      keywords = config.keywords || '';
+      description = config.description || '';
+    } else {
+      if ((page.layout == 'docs') && page.group && (page.group in theme.sidebar.widget_library)) {
+        let widget = theme.sidebar.widget_library[page.group];
+        if ((widget.class == 'group') && widget.seo_title) {
+          title = widget.seo_title + ": " + title;
+        }
+      }
+    }
+    if (theme.seo && theme.seo.use_tags_as_keywords) {
+      if (!keywords && page.tags && page.tags.length > 0) {
+        let tags = page.tags.map(function(t){return t.name}).join(',');
+        if (tags.length > 0) {
+          keywords += tags;
+        }
+      }
+    }
+    if (theme.seo && theme.seo.use_excerpt_as_description) {
+      if (page.description == undefined) {
+        if (page.excerpt) {
+          description = truncate(strip_html(page.excerpt), {length: 160});
+        }
+      }
+    }
+    function generate_title() {
+      let s="<title>"
+      if (title) {
+        s+=`${title} - `
+      }
+      s+=`${config.title}</title>`
+      return s
+    }
+    function generate_keywords() {
+      if(!(is_home() && page.prev == 0)){
+        if (keywords) {
+          keywords += `,`
+        }
+        keywords += `${config.keywords}`
+      }
+      return `<meta name="keywords" content="${keywords}">`
+    }
+    function generate_description() {
+      if (!description) {
+        description += config.description
+      }
+      description += ` - ${config.author} - ${config.title}`
+      return `<meta name="description" content="${description}">`
+    }
+  _%>
+  <%- generate_title() %>
+  <%- generate_keywords() %>
+  <%- generate_description() %>
+  <%- open_graph(theme.open_graph) %>
+  <!-- feed -->
+  <%_ if (config.feed && config.feed.path){ _%>
+    <%- feed_tag(config.feed.path, {title: config.title}) %>
+  <%_ } _%>
+  <!-- import meta -->
+  <%_ if (config.import && config.import.meta){ _%>
+    <%_ (config.import.meta||[]).forEach(function(item){ _%>
+      <%- item %>
+    <%_ }) _%>
+  <%_ } _%>
+  <!-- link -->
+  <%_ if (config.favicon) { _%>
+    <link rel="shortcut icon" type='image/x-icon' href="<%- url_for(config.favicon) %>">
+  <%_ } _%>
+  <!-- import link -->
+  <%_ if (config.import && config.import.link){ _%>
+    <%_ (config.import.link||[]).forEach(function(item){ _%>
+      <%- item %>
+    <%_ }) _%>
+  <%_ } _%>
+  <style>
+    /* 
+      source/css/first.styl
+      scripts/first-style/index.js
+     */
+    <%- getFirstCSS() %>
+  </style>
+  <link rel="stylesheet" href="<%- theme.cdn.map.css.style %>" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="<%- theme.cdn.map.css.style %>"></noscript>
+  <%_ if (theme.plugins.darkmodejs.enable) { _%>
+    <script>
+      var userColorScheme=localStorage.getItem("user-color-scheme")
+      if(userColorScheme){
+        document.documentElement.setAttribute("data-user-color-scheme", userColorScheme);
+      }
+    </script>
+  <%_ } _%>
+  <%- partial('../_third-party/end-of-support/script') %>
+  <!-- Custom Files head begin-->
+  <%- volantis_inject('head') %>
+  <!-- Custom Files head end-->
+</head>
