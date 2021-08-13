@@ -20,7 +20,7 @@
   <meta content="Fieshy&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1628814510036" as="style">
+  <link rel="preload" href="/css/style.css?time=1628849921088" as="style">
   <!-- 页面元数据 -->
   <title>标签：OI/题解 - Fieshy's Blog</title>
   <meta name="keywords" content="null">
@@ -35,6 +35,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png">
   <!-- feed -->
+    <link rel="alternate" href="/atom.xml" title="Fieshy's Blog" type="application/atom+xml">
   <!-- import meta -->
   <!-- link -->
     <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicon.ico">
@@ -2311,8 +2312,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1628814510036" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1628814510036"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1628849921088" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1628849921088"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("user-color-scheme")
       if(userColorScheme){
@@ -2569,12 +2570,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                     
                       
             
-              <hr>
-            
-          
-                    
-                      
-            
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/volantis-x/volantis-docs/
                   
@@ -2608,12 +2603,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                   </ul>
                 
               </li>
-            
-          
-                    
-                      
-            
-              <hr>
             
           
                     
@@ -2896,12 +2885,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                     
                       
             
-              <hr>
-            
-          
-                    
-                      
-            
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/volantis-x/volantis-docs/
                   
@@ -2935,12 +2918,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                   </ul>
                 
               </li>
-            
-          
-                    
-                      
-            
-              <hr>
             
           
                     
@@ -3127,14 +3104,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md'>
     
       
-        题意简析
-给你 $n$ 座楼，没座楼的高度为 $h_i$。
+        题意简析给你 $n$ 座楼，没座楼的高度为 $h_i$。
 初始在第一座楼，你需要跳到第 $n$ 座楼上。
 能从 $i$ 跳到 $j$ 需满足以下条件之一：
-
-$1. i = j + 1$
-$2. \min(h_i,h_j) &gt; \max(h_{i+1},h_{i+2},…,h_{j-2},h_{j-1})$
-$3. \max(h_i,h_j) &lt; \min(h_{i+1},h_...
+$$1. i = j + 1$$$$2. \min(h_i,h_j) &gt; \max(h_{i+1},h_{i+2},…,h_{j-2},h_{j-1})$$$$3. \max(h_i,h_j) &lt; \min(h_{i+1},h...
       
     
   </div>
@@ -3337,7 +3310,7 @@ $3. \max(h_i,h_j) &lt; \min(h_{i+1},h_...
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Fri Aug 13 2021 08:28:30 GMT+0800 (中国标准时间)</div>
+            <div id="last-update" style="display: none;">Fri Aug 13 2021 18:18:41 GMT+0800 (中国标准时间)</div>
             <div id="last-update-show">2021-08-13 日</div>
           
         </div>
@@ -4010,7 +3983,7 @@ $3. \max(h_i,h_j) &lt; \min(h_{i+1},h_...
     
     
     volantis.import.jQuery().then(()=>{
-      volantis.js('/js/rightMenu.js?time=1628814510036') // 此处依赖JQ
+      volantis.js('/js/rightMenu.js?time=1628849921088') // 此处依赖JQ
     })
   </script>
 
@@ -4122,19 +4095,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1628814510036")
+        volantis.js("/js/plugins/sites.js?time=1628849921088")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1628814510036")
+        volantis.js("/js/plugins/friends.js?time=1628849921088")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1628814510036")
+        volantis.js("/js/plugins/contributors.js?time=1628849921088")
       }
     
   };
@@ -4209,7 +4182,7 @@ volantis.pjax.push(bindToggleButton);
 
     
       // 右键 music 需要在 APlayer  MetingJS 之后加载
-      await volantis.js('/js/aplayer.js?time=1628814510038')
+      await volantis.js('/js/aplayer.js?time=1628849921090')
       volantis.APlayerController.music = true;
     
   })();
@@ -4306,7 +4279,7 @@ volantis.pjax.push(bindToggleButton);
       emojiMaps: emojiMaps,
     }))
   }
-  volantis.js('/js/valine.js?time=1628814510036').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1628849921088').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -4315,7 +4288,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1628814510036.js"></script>
+<script src="/js/app.js?time=1628849921088.js"></script>
 
 
 <!-- optional -->
@@ -4584,8 +4557,8 @@ function setSearchService() {
   <script>
   volantis.message = (title, message, icon = 'fas fa-info-circle light-blue', time = '5000', position = 'topRight', done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1628814510036')
-      volantis.js('/js/message.js?time=1628814510036', () => {
+      volantis.css('/css/message.css?time=1628849921088')
+      volantis.js('/js/message.js?time=1628849921088', () => {
         tozashMessage(title, message, icon, time, position, done);
       });
     } else {
@@ -4618,8 +4591,8 @@ function setSearchService() {
 
   volantis.question = (title, message, success = null, cancel = null, done = null, icon = 'fas fa-question-circle light-blue', time = '20000') => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1628814510036')
-      volantis.js('/js/message.js?time=1628814510036', () => {
+      volantis.css('/css/message.css?time=1628849921088')
+      volantis.js('/js/message.js?time=1628849921088', () => {
         tozashQuestion(title, message, icon , time, success, cancel, done);
       });
     } else {
