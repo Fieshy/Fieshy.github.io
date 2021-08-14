@@ -16,7 +16,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>Fieshy&#39;s Blog</title>
+  <title>关于 - Fieshy&#39;s Blog</title>
+  
+    <meta name="keywords" content="OI/题解">
   
 
   
@@ -714,7 +716,7 @@
 
   
   
-      <div class='cover-wrapper page featured' style="display: none;">
+      <div class='cover-wrapper post featured' style="display: none;">
         <canvas id="header_canvas" style="position:absolute;bottom:0;z-index: 1;" width="900" height="350"></canvas>
         
           <div class='cover-bg lazyload placeholder' data-bg="https://i.loli.net/2021/07/22/e5ipzrXWDaToSPA.jpg"></div>
@@ -800,24 +802,24 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">题解：CF1523E Crypto Lights</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
-  <div id="pjax-comment-placeholder"></div>
+  <div id="pjax-comment-placeholder">你觉得这篇文章怎么样呢？</div>
 </div>
 
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("none" == "none") { // 移除封面
+  if ("half" == "none") { // 移除封面
     document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("none" == "half") { // 半屏
+    if ("half" == "half") { // 半屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("none" == "full") { // 全屏
+    } else if ("half" == "full") { // 全屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
       document.getElementsByClassName('scroll-down')[0].style.display = "";
     }
@@ -921,158 +923,6 @@
 
   
   
-    
-    
-
-  
-
-  
-
-  
-    
-    
-
-<section class="widget text shadow floatable desktop">
-  
-  <header>
-    
-      <i class="fal fa-comments fa-fw" aria-hidden="true"></i><span class='name'>最新评论</span>
-    
-  </header>
-
-
-  <div class='content'>
-    
-      <div id="hot-comments"></div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget shadow floatable desktop mobile">
-  
-  <header>
-    
-      <i class="fal fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>4 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2021/08/12'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>2.9k 字</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Sat Aug 14 2021 20:34:02 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2021-08-14 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-08-14 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
-
-  
 
   
     
@@ -1090,7 +940,7 @@
 
 
     <div class='content'>
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E7%AE%80%E6%9E%90"><span class="toc-text">题意简析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-text">分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
     </div>
   </section>
 
@@ -1102,15 +952,80 @@
 
 <div class='l_main'>
   <article
-  class="article post white-box reveal md shadow floatable article-type-page"
-  id="page" itemscope itemprop="blogPost">
+  class="article post white-box reveal md shadow floatable article-type-post"
+  id="post" itemscope itemprop="blogPost">
   
 
 
   
   <div class="article-meta" id="top">
     
+      
+
+  
+    <meting-js
+      mini='true'
+      volume='0.7'
+      loop='all'
+      order='list'
+      server='netease'
+      type='song'
+      id='16846091'>
+    </meting-js>
+  
+
+
     
+    
+    
+      <h1 class="title">
+        题解：CF1523E Crypto Lights
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://i.loli.net/2021/08/14/zjnRLv3t876WSXV.png">
+    <p>Fieshy</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fal fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年8月14日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="题解：CF1523E Crypto Lights" data-path="/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1523E%20Crypto%20Lights/">
+        <i class="fal fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
     
   </div>
 
@@ -1118,13 +1033,60 @@
   
 
   
-  <h1 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h1><p><a target="_blank" rel="noopener" href="https://github.com/volantis-x/examples/issues/new/choose">Create a new issue</a> and submit it, then your blog will be displayed here:</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://volantis.js.org/examples/">https://volantis.js.org/examples/</a></li>
-<li><a target="_blank" rel="noopener" href="https://volantis.vercel.app/examples/">https://volantis.vercel.app/examples/</a></li>
-</ul>
+  <h2 id="题意简析"><a href="#题意简析" class="headerlink" title="题意简析"></a>题意简析</h2><div class='checkbox'><input type="radio" />
+            <p>有多组数据，给你 $n$ 盏灯，一开始都是暗的每次，点亮一盏灯。</p>
+            </div>
+<div class='checkbox'><input type="radio" />
+            <p>如果每次点亮后，存在一个长度为 $k$ 的区间中，不止一盏灯亮，则停止。</p>
+            </div>
+<div class='checkbox'><input type="radio" />
+            <p>求期望点亮多少盏灯？对 $10^9+7$ 取模。</p>
+            </div>
+<div class='checkbox'><input type="radio" />
+            <p>$2\le k\le n \le 10^5$。</p>
+            </div>
 
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>根据期望的计算公式可得：<br>$$E=\sum p_ii$$<br>但这里 $p_i$ 表示什么？</p>
+<p>我们发现 $p_i$ 表示<strong>点亮了 $i$ 盏灯结束</strong>的期望。但是直接算 $p_i\times i$ 很难办，我们最好只要算一个和，而不是乘积的和。这时候发现 $\sum p_ii$ 很特殊，它是后缀和的总和。简单来说，如果记 $ sum_i=\sum\limits^n_{j=i}p_i$，我们要求的期望 $E=\sum sum_i$。证明很简单，将式子展开即可。</p>
+<p>问题转化为如何计算 $\sum sum_i$。那么 $sum_i$ 表示什么呢？发现它是在以 $[i,n]$ 为结束的，有多少灯点亮的期望总和。这一求和，表示的就是在<strong>第 $i-1$ 位还没结束的期望</strong>。这样一来转化就变得清晰。</p>
+<p>首先，点亮 $i-1$ 盏灯有 $\dbinom{n}{i}$ 种可能。为了满足点亮 $i-1$ 盏灯后不结束，每两盏灯之间的距离至少为 $k-1$。总共 $i-1$ 盏灯，共有 $i-2$ 个空隙，就需要 $(k-1)\times (i-2)$ 盏灯是亮着的。那么留给我们点亮的就只有 $n-(k-1)\times (i-2)$ 个位置。在其中选 $i-1$ 个灯，共有 $\dbinom{n-(k-1)\times (i-2)}{i-1}$ 种可能。</p>
+<p>所以，<br>$$sum_i=\dfrac{\dbinom{n-(k-1)\times (i-2)}{i-1}}{\dbinom{n}{i}}$$</p>
+<p>到此分析完毕。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><div class='checkbox'><input type="radio" />
+            <p>对期望求值进行分析转化，对定义理解透彻。<del>不会求组合数当我没说。</del></p>
+            </div>
   
+  
+  
+  <div class='footer'>
+    
+    
+    
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fal fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="\2021\08\14\题解：CF1279F New Year and Handle Change\" title="题解：CF1279F New Year and Handle Change" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解：CF1279F New Year and Handle Change</span></a><a class="item" href="\2021\08\12\题解：CF1407D-Discrete-Centrifugal-Jumps - 副本 - 副本\" title="题解：CF1407D Discrete Centrifugal Jumps" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解：CF1407D Discrete Centrifugal Jumps</span></a><a class="item" href="\2021\08\12\hello-world\" title="Hello World" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Hello World</span></a></div></section></div>
+    
+    
+    <div class='copyright'>
+      <blockquote>
+        
+        
+        <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+        
+        
+        
+        <p>本文永久链接是：<a href=http://example.com/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1523E%20Crypto%20Lights/>http://example.com/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1523E%20Crypto%20Lights/</a></p>
+        
+        
+      </blockquote>
+    </div>
+    
+    
+  </div>
   
   
   
@@ -1134,10 +1096,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-13T09:53:32+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-14T18:42:03+08:00">
   <a class='notlink'>
     <i class="fal fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年8月13日</p>
+    <p>更新于：2021年8月14日</p>
   </a>
 </div>
 
@@ -1145,6 +1107,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/OI-%E9%A2%98%E8%A7%A3/" rel="nofollow"><i class="fal fa-hashtag fa-fw" aria-hidden="true"></i><p>OI/题解</p></a></div>
+
 
         
       
@@ -1156,7 +1121,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/links/README.html&title= - Fieshy's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1523E%20Crypto%20Lights/&title=关于 - Fieshy's Blog&summary="
           
           >
           
@@ -1168,7 +1133,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/links/README.html&title= - Fieshy's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1523E%20Crypto%20Lights/&title=关于 - Fieshy's Blog&summary="
           
           >
           
@@ -1180,7 +1145,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/links/README.html&title= - Fieshy's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1523E%20Crypto%20Lights/&title=关于 - Fieshy's Blog&summary="
           
           >
           
@@ -1206,7 +1171,34 @@
 
   
   
+  
+  
+  
 
+  
+  <div class="prev-next">
+    
+    <a class='prev' href='/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1279F%20New%20Year%20and%20Handle%20Change/'>
+      <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>题解：CF1279F New Year and Handle Change</p>
+      <p class='content'>题意简化
+            给你一个字符串，长度为 $n$，区分大小写，也可看成零一串。
+            
+
+            每次操作把一段长度为 $len$ 的所有字符变...</p>
+    </a>
+    
+    
+    <a class='next' href='/2021/08/12/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1407D-Discrete-Centrifugal-Jumps%20-%20%E5%89%AF%E6%9C%AC%20-%20%E5%89%AF%E6%9C%AC/'>
+      <p class='title'>题解：CF1407D Discrete Centrifugal Jumps<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+      <p class='content'>题意简析
+            给你 $n$ 座楼，没座楼的高度为 $h_i$。
+            
+
+            初始在第一座楼，你需要跳到第 $n$ 座楼上。
+     ...</p>
+    </a>
+    
+  </div>
   
 </article>
 
@@ -1226,10 +1218,60 @@
 
 
 
+<script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
 </div>
-
-
-
       </div>
       
   

@@ -16,7 +16,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>Fieshy&#39;s Blog</title>
+  <title>关于 - Fieshy&#39;s Blog</title>
+  
+    <meta name="keywords" content="OI/题解">
   
 
   
@@ -714,7 +716,7 @@
 
   
   
-      <div class='cover-wrapper page featured' style="display: none;">
+      <div class='cover-wrapper post featured' style="display: none;">
         <canvas id="header_canvas" style="position:absolute;bottom:0;z-index: 1;" width="900" height="350"></canvas>
         
           <div class='cover-bg lazyload placeholder' data-bg="https://i.loli.net/2021/07/22/e5ipzrXWDaToSPA.jpg"></div>
@@ -800,24 +802,24 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">题解：CF1279F New Year and Handle Change</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
-  <div id="pjax-comment-placeholder"></div>
+  <div id="pjax-comment-placeholder">你觉得这篇文章怎么样呢？</div>
 </div>
 
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("none" == "none") { // 移除封面
+  if ("half" == "none") { // 移除封面
     document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("none" == "half") { // 半屏
+    if ("half" == "half") { // 半屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("none" == "full") { // 全屏
+    } else if ("half" == "full") { // 全屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
       document.getElementsByClassName('scroll-down')[0].style.display = "";
     }
@@ -921,158 +923,6 @@
 
   
   
-    
-    
-
-  
-
-  
-
-  
-    
-    
-
-<section class="widget text shadow floatable desktop">
-  
-  <header>
-    
-      <i class="fal fa-comments fa-fw" aria-hidden="true"></i><span class='name'>最新评论</span>
-    
-  </header>
-
-
-  <div class='content'>
-    
-      <div id="hot-comments"></div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget shadow floatable desktop mobile">
-  
-  <header>
-    
-      <i class="fal fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>4 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2021/08/12'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>2.9k 字</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Sat Aug 14 2021 20:34:02 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2021-08-14 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-08-14 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
-
-  
 
   
     
@@ -1090,7 +940,7 @@
 
 
     <div class='content'>
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E7%AE%80%E5%8C%96"><span class="toc-text">题意简化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-text">分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%98%E6%96%B9%E9%A2%98%E8%A7%A3"><span class="toc-text">官方题解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
     </div>
   </section>
 
@@ -1102,15 +952,80 @@
 
 <div class='l_main'>
   <article
-  class="article post white-box reveal md shadow floatable article-type-page"
-  id="page" itemscope itemprop="blogPost">
+  class="article post white-box reveal md shadow floatable article-type-post"
+  id="post" itemscope itemprop="blogPost">
   
 
 
   
   <div class="article-meta" id="top">
     
+      
+
+  
+    <meting-js
+      mini='true'
+      volume='0.7'
+      loop='all'
+      order='list'
+      server='netease'
+      type='song'
+      id='16846091'>
+    </meting-js>
+  
+
+
     
+    
+    
+      <h1 class="title">
+        题解：CF1279F New Year and Handle Change
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://i.loli.net/2021/08/14/zjnRLv3t876WSXV.png">
+    <p>Fieshy</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fal fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年8月14日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="题解：CF1279F New Year and Handle Change" data-path="/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1279F%20New%20Year%20and%20Handle%20Change/">
+        <i class="fal fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
     
   </div>
 
@@ -1118,13 +1033,85 @@
   
 
   
-  <h1 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h1><p><a target="_blank" rel="noopener" href="https://github.com/volantis-x/examples/issues/new/choose">Create a new issue</a> and submit it, then your blog will be displayed here:</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://volantis.js.org/examples/">https://volantis.js.org/examples/</a></li>
-<li><a target="_blank" rel="noopener" href="https://volantis.vercel.app/examples/">https://volantis.vercel.app/examples/</a></li>
-</ul>
+  <h2 id="题意简化"><a href="#题意简化" class="headerlink" title="题意简化"></a>题意简化</h2><div class='checkbox'><input type="radio" />
+            <p>给你一个字符串，长度为 $n$，区分大小写，也可看成零一串。</p>
+            </div>
+<div class='checkbox'><input type="radio" />
+            <p>每次操作把一段长度为 $len$ 的<strong>所有字符</strong>变成大写或小写，最多进行 $k$ 次操作。</p>
+            </div>
+<div class='checkbox'><input type="radio" />
+            <p>你需要最小化大小写字母个数的最小值（或 $0$，$1$ 个数的最小值）。</p>
+            </div>
+<div class='checkbox'><input type="radio" />
+            <p>$1\le len\le n\le 10^6$，$1\le k\le 10^6$</p>
+            </div>
 
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>显然，我们可以分别最小化小写字母个数，最小化大写字母个数，两者取 $\min$。</p>
+<p>设 $s$ 为这个字符串。如果 $s_i$ 为小写字母，将 $a_i$ 记作 $1$，是大写字母记作 $0$，那么最小化小母字母的个数，即为求 $\sum{a_i}$ 的最小值。最小化大母字母同理，想到可能是<strong>动规</strong>。</p>
+<p>注意到 $n$ 的范围是 $10^6$，正常的动规过不去。 </p>
+<p>朴素的算法可以参考官方题解的第三段文字，复杂度是 $O(nk)$，过不了。</p>
+<h3 id="官方题解"><a href="#官方题解" class="headerlink" title="官方题解"></a><a target="_blank" rel="noopener" href="https://codeforces.com/blog/entry/72577">官方题解</a></h3><p>这里讲正解，我们考虑<strong>二分+动规</strong>。</p>
+<p>摆在我们面前的有两个问题：</p>
+<div class="note"><p>二分枚举什么？如何判断可行？正确性？</p></div>
+<div class="note"><p>$dp_i$ 表示什么？ $dp_i$ 如何转移？</p></div>
+
+<p>我们发现每一次操作的长度为 $len$，那么每次<strong>最多</strong>将小写或大写字母的个数减少 $len$ 个，<strong>最少</strong>一个都没变。（为了和二分的 $l$ 区分，这里用了 $len$，而不是 $l$，注意。）</p>
+<p>那么对于小写的情况，我们就可以二分枚举每次操作将小写字母数量<strong>最少减少</strong>了 $mid$。$dp_i$ 表示经历了若干次操作，当前点为 $i$ 时，在每次操作最少减少 $mid$ 个小写字母之外，<strong>额外减少</strong>的个数（就是还多删了几个）。我们可以判断在当前情况下，所需要的操作次数是否小于等于 $k$。这样我们就能找到最小的 $mid$。大写字母的情况相同。</p>
+<p>二分具体说是这样：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">l = <span class="number">0</span>, r = len;</span><br><span class="line"><span class="keyword">while</span>(l &lt; r)&#123;</span><br><span class="line">	<span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">check</span>(mid, <span class="number">0</span>) &lt;= k)<span class="comment">//判断是否满足操作次数小于等于k。</span></span><br><span class="line">		r = mid;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		l = mid + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">check</span>(l, <span class="number">1</span>);<span class="comment">//表示找到了一个最优解,记录答案。</span></span><br></pre></td></tr></table></figure>
+<p>关于二分的正确性，如果我们找到一个满足的值 $mid$,它需要的操作次数不大于 $k$,那么就继续寻找最小的 $mid$ 值。</p>
+<p>关于 $dp_i$ 的转移：<br>$$dp_i = \begin{cases}<br>    \max(dp_{i-1},sum_i-mid)  &amp;\mbox {i&lt;len}\\<br>    \max(dp_{i-1},dp_{i-len}+sum_i-sum_{i-len}-mid) &amp;\mbox i\geq len<br>    \end{cases}<br>$$<br>其中 $sum_i$ 为 $a_i$ 的前缀和，对大小写分别计算，$mid$ 为每次操作最少减少的小写字母数量。</p>
+<div class="note"><p>第一个式子中， 因为 $i&lt;len$,那么它不可能是从第一个数之前开始操作的，既它操作的左起点一定小于 $1$。它只可能不操作或以 $1$ 为左起点来操作所以它不是终点。$sum_i-mid$ 即为在 $[1,i]$ 中多删的个数。</p></div>
+
+<div class="note"><p>第二个式子中，它仍能不操作或在一个操作之间，或者作为一个操作的<strong>终点</strong>。于是这个操作是从 $i-len+1$ 开始的。那么 $sum_i-sum_{i-len}$ 即为在 $[i-len+1,i]$ 中 $1$ 的个数，减去 $mid$，即为这次操作中多去掉的数。它从 $i-len+1$ 上来，就加上 $dp_{i-len}$，于是就有了上述的转移（注意是 $dp_{i-len}$ 哦）。</p></div>
+
+<p>我们还需要一个数组 $ans_i$ 来记录当前在第 $i$ 位时，每次操作最小减少 $mid$ 个数，<strong>最少需要几次操作</strong>。<br>$$ans_i = \begin{cases}<br>    ans_{i-1}  &amp;\mbox x&lt;dp_{i-1} \\<br>    ans_{i-len}+1  &amp;\mbox x&gt;dp_{i-1} \\<br>    \min(ans_{i-1},ans_{i-len}+1)  &amp;\mbox x=dp_{i-1}<br>    \end{cases}<br>$$<br>$$x = \begin{cases}<br>    sum_i-mid  &amp;\mbox i&lt;len\\<br>    dp_{i-len}+sum_i-sum_{i-len}-mid &amp;\mbox i\geq len<br>           \end{cases}<br>$$<br>$x$ 其实就是上面求 $dp_i$ 中，$\max$ 的右边部分。</p>
+<p>不难明白：</p>
+<div class="note"><p>如果当前多删除的个数比前一个要多，那么肯定以 $i-len+1$ 处进行一次操作更好。</p></div>
+<div class="note"><p>如果比之前小，则不用进行操作，因为还不如之前的。</p></div>
+<div class="note"><p>如果等于，则取前一个和第 $i-len+1$ 个的最小值（但是算的时候是在 $i-len$ 的）。</p></div>
+
+<p>那么我们的答案即为：<br>$$\min(sum_n-dp_n-k\times mid,sum_n-dp_n-k\times mid)$$<br>上式左右分别是小写和大写的情况。</p>
+<p>因为在条件允许的情况下，操作次数肯定越多越好，所以是 $k\times mid$。</p>
+<p>到这分析完毕。二分复杂度为 $O(\log n)$, 维护 $dp_i$ 和 $ans_i$ 的复杂度为 $O(n)$。总复杂度为 $O(n\log n)$。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><div class='checkbox'><input type="radio" />
+            <p>思路为二分+动规，关键点在于<strong>二分的条件和状态转移</strong>。</p>
+            </div>
+
+<p><del>又要贴码子了。</del></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e6</span> + <span class="number">5</span>;</span><br><span class="line">string s;</span><br><span class="line"><span class="keyword">int</span> ans[N], a[N], dp[N], sum[N];</span><br><span class="line"><span class="comment">//ans记录当前最小操作次数，sum为前缀和，a表示01串。</span></span><br><span class="line"><span class="keyword">int</span> n, k, len, answer = <span class="number">2100000000</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> mid, <span class="keyword">int</span> op)</span></span>&#123;<span class="comment">//op是判断是否要记录答案</span></span><br><span class="line">	<span class="keyword">int</span> x;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)&#123;</span><br><span class="line">		<span class="keyword">if</span> (i - len &lt; <span class="number">0</span>) x =  sum[i] - mid;<span class="comment">//其实小于等于0也行。</span></span><br><span class="line">		<span class="keyword">else</span> x = dp[i - len] - sum[i - len] + sum[i] - mid;</span><br><span class="line">		dp[i] = <span class="built_in">max</span>(dp[i - <span class="number">1</span>], x);<span class="comment">//统计个数 </span></span><br><span class="line">		<span class="keyword">if</span> (dp[i - <span class="number">1</span>] &gt; x) ans[i] = ans[i - <span class="number">1</span>];</span><br><span class="line">		<span class="keyword">if</span> (dp[i - <span class="number">1</span>] &lt; x) ans[i] = ans[i - len] + <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> (dp[i - <span class="number">1</span>] == x) ans[i] = <span class="built_in">min</span>(ans[i - <span class="number">1</span>], ans[i - len] + <span class="number">1</span>);</span><br><span class="line">        <span class="comment">//计算最小的操作次数。</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (op) answer = <span class="built_in">min</span>(answer, sum[n] - dp[n] - k * mid);<span class="comment">//统计最小值。</span></span><br><span class="line">	<span class="keyword">return</span> ans[n];<span class="comment">//返回最少需要操作次数。 </span></span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	n = <span class="built_in">read</span>(), k = <span class="built_in">read</span>(), len = <span class="built_in">read</span>();</span><br><span class="line">	cin&gt;&gt;s;</span><br><span class="line">	<span class="comment">//小写部分</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)&#123;</span><br><span class="line">		a[i] = <span class="built_in">islower</span>(s[i - <span class="number">1</span>]) &gt; <span class="number">0</span>;<span class="comment">//判断是小写字母。</span></span><br><span class="line">		sum[i] = sum[i - <span class="number">1</span>] + a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> l = <span class="number">0</span>, r = len;</span><br><span class="line">	<span class="keyword">while</span> (l &lt; r)&#123; </span><br><span class="line">		<span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">check</span>(mid, <span class="number">0</span>) &lt;= k) r = mid;</span><br><span class="line">		<span class="keyword">else</span> l = mid + <span class="number">1</span>; </span><br><span class="line">	&#125; </span><br><span class="line">	<span class="built_in">check</span>(l, <span class="number">1</span>);<span class="comment">//找到最优解后，这是最后一次运行，统计答案。 </span></span><br><span class="line">	<span class="comment">//大写部分 </span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)&#123;</span><br><span class="line">		a[i] = <span class="built_in">isupper</span>(s[i - <span class="number">1</span>]) &gt; <span class="number">0</span>;<span class="comment">//判断是大写字母。</span></span><br><span class="line">		sum[i] = sum[i - <span class="number">1</span>] + a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	l = <span class="number">0</span>, r = len;</span><br><span class="line">	<span class="keyword">while</span> (l &lt; r)&#123;</span><br><span class="line">		<span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">check</span>(mid, <span class="number">0</span>) &lt;= k) r = mid;</span><br><span class="line">		<span class="keyword">else</span> l = mid + <span class="number">1</span>; </span><br><span class="line">	&#125; </span><br><span class="line">	<span class="built_in">check</span>(l, <span class="number">1</span>);<span class="comment">//同理。</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, answer);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
+  
+  
+  <div class='footer'>
+    
+    
+    
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fal fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="\2021\08\12\题解：CF1407D-Discrete-Centrifugal-Jumps - 副本 - 副本\" title="题解：CF1407D Discrete Centrifugal Jumps" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解：CF1407D Discrete Centrifugal Jumps</span></a><a class="item" href="\2021\08\14\题解：CF1523E Crypto Lights\" title="题解：CF1523E Crypto Lights" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解：CF1523E Crypto Lights</span></a><a class="item" href="\2021\08\12\hello-world\" title="Hello World" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Hello World</span></a></div></section></div>
+    
+    
+    <div class='copyright'>
+      <blockquote>
+        
+        
+        <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+        
+        
+        
+        <p>本文永久链接是：<a href=http://example.com/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1279F%20New%20Year%20and%20Handle%20Change/>http://example.com/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1279F%20New%20Year%20and%20Handle%20Change/</a></p>
+        
+        
+      </blockquote>
+    </div>
+    
+    
+  </div>
   
   
   
@@ -1134,10 +1121,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-13T09:53:32+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-14T19:34:08+08:00">
   <a class='notlink'>
     <i class="fal fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年8月13日</p>
+    <p>更新于：2021年8月14日</p>
   </a>
 </div>
 
@@ -1145,6 +1132,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/OI-%E9%A2%98%E8%A7%A3/" rel="nofollow"><i class="fal fa-hashtag fa-fw" aria-hidden="true"></i><p>OI/题解</p></a></div>
+
 
         
       
@@ -1156,7 +1146,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/links/README.html&title= - Fieshy's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1279F%20New%20Year%20and%20Handle%20Change/&title=关于 - Fieshy's Blog&summary="
           
           >
           
@@ -1168,7 +1158,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/links/README.html&title= - Fieshy's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1279F%20New%20Year%20and%20Handle%20Change/&title=关于 - Fieshy's Blog&summary="
           
           >
           
@@ -1180,7 +1170,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/links/README.html&title= - Fieshy's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1279F%20New%20Year%20and%20Handle%20Change/&title=关于 - Fieshy's Blog&summary="
           
           >
           
@@ -1206,7 +1196,24 @@
 
   
   
+  
+  
+  
 
+  
+  <div class="prev-next">
+    
+    
+    <a class='next' href='/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1523E%20Crypto%20Lights/'>
+      <p class='title'>题解：CF1523E Crypto Lights<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+      <p class='content'>题意简析
+            有多组数据，给你 $n$ 盏灯，一开始都是暗的每次，点亮一盏灯。
+            
+
+            如果每次点亮后，存在一个长度为 $k$ 的...</p>
+    </a>
+    
+  </div>
   
 </article>
 
@@ -1226,10 +1233,60 @@
 
 
 
+<script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
 </div>
-
-
-
       </div>
       
   
