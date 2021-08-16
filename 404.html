@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-    
+    <meta name="robots" content="noindex,nofollow">
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -16,7 +16,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>说说 - Fieshy&#39;s Blog</title>
+  <title>404 Not Found - Fieshy&#39;s Blog</title>
   
 
   
@@ -98,8 +98,6 @@
       <p class="title"></p>
       <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
         <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
-        
-          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
       </ul>
     </div>
@@ -454,7 +452,7 @@
 
   
   
-      <div class='cover-wrapper artitalk featured' style="display: none;">
+      <div class='cover-wrapper page featured' style="display: none;">
         <canvas id="header_canvas" style="position:absolute;bottom:0;z-index: 1;" width="900" height="350"></canvas>
         
           <div class='cover-bg lazyload placeholder' data-bg="https://i.loli.net/2021/07/22/e5ipzrXWDaToSPA.jpg"></div>
@@ -543,21 +541,21 @@
   <div id="pjax-ispage">false</div>
   <div id="pjax-pageTitle"></div>
   <div id="pjax-enable-cover">true</div>
-  <div id="pjax-comment-path"></div>
-  <div id="pjax-comment-placeholder"></div>
+  <div id="pjax-comment-path">/404.html</div>
+  <div id="pjax-comment-placeholder">请留言告诉我您要访问哪个页面找不到了</div>
 </div>
 
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("none" == "none") { // 移除封面
+  if ("half" == "none") { // 移除封面
     document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("none" == "half") { // 半屏
+    if ("half" == "half") { // 半屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("none" == "full") { // 全屏
+    } else if ("half" == "full") { // 全屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
       document.getElementsByClassName('scroll-down')[0].style.display = "";
     }
@@ -570,39 +568,6 @@
         
         
 
-<div class='l_main'>
-  <article
-  class="article post white-box reveal md shadow floatable article-type-artitalk"
-  id="artitalk" itemscope itemprop="blogPost">
-  
-
-
-  
-  <div class="article-meta" id="top">
-    
-    
-    
-  </div>
-
-
-  
-  <div id="artitalk_main"></div>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-</article>
-
-
-
-
-</div>
 <aside class='l_side'>
   <div style="margin-bottom: 16px;border-radius: 8px;" class='shadow floatable widget_author desktop'>
     <div id="zuozhebg" class="newauthor"
@@ -693,191 +658,68 @@
   
 
   
-  
-    
-    
-
-  
-
-  
-
-  
-    
-    
-
-<section class="widget text shadow floatable desktop">
-  
-  <header>
-    
-      <i class="fal fa-comments fa-fw" aria-hidden="true"></i><span class='name'>最新评论</span>
-    
-  </header>
-
-
-  <div class='content'>
-    
-      <div id="hot-comments"></div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget shadow floatable desktop mobile">
-  
-  <header>
-    
-      <i class="fal fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>6 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2021/08/12'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>4.5k 字</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Mon Aug 16 2021 11:02:23 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2021-08-16 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-08-16 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-
-
-
-  
-
 
 </aside>
 
+<div class='l_main no_sidebar'>
+  <article
+  class="article post white-box reveal md shadow floatable article-type-page"
+  id="page" itemscope itemprop="blogPost">
+  
 
-<script>
 
-  var appID ="ogP8qj3veMh0LFpFWMPOyF0X-MdYXbMMI";
-  var appKEY ="nHXLd3N3Jgh460t2iRQKWAtr";
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+  </div>
+
+
+  
+
+  
+  <p class='p logo center huge'>404</p>
+<p class='p center bold'>很抱歉，您访问的页面不存在</p>
+<p class='p center small'>可能是输入地址有误或该地址已被删除</p>
   
   
   
   
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+    </div>
+  </div>
+
+
   
   
-      var lazy=1;
+
   
-  
-  
-  
-  
-</script>
-<script async type="text/javascript" src="https://cdn.jsdelivr.net/npm/artitalk"></script>
+</article>
+
+
+
+
+  <article class="post white-box reveal shadow floatable" id="comments">
+    <p ct><i class='fal fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+</div>
+
+
 
       </div>
       
