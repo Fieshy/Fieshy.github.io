@@ -18,6 +18,8 @@
   
   <title>关于 - Fieshy&#39;s Blog</title>
   
+    <meta name="keywords" content="OI/题解">
+  
 
   
 
@@ -98,6 +100,8 @@
       <p class="title"></p>
       <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
         <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
       </ul>
     </div>
@@ -452,7 +456,7 @@
 
   
   
-      <div class='cover-wrapper docs featured' style="display: none;">
+      <div class='cover-wrapper post featured' style="display: none;">
         <canvas id="header_canvas" style="position:absolute;bottom:0;z-index: 1;" width="900" height="350"></canvas>
         
           <div class='cover-bg lazyload placeholder' data-bg="https://i.loli.net/2021/07/22/e5ipzrXWDaToSPA.jpg"></div>
@@ -538,24 +542,24 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">题解：CF1407D Discrete Centrifugal Jumps</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
-  <div id="pjax-comment-placeholder">有什么想对我说的呢？</div>
+  <div id="pjax-comment-placeholder">你觉得这篇文章怎么样呢？</div>
 </div>
 
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("none" == "none") { // 移除封面
+  if ("half" == "none") { // 移除封面
     document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("none" == "half") { // 半屏
+    if ("half" == "half") { // 半屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("none" == "full") { // 全屏
+    } else if ("half" == "full") { // 全屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
       document.getElementsByClassName('scroll-down')[0].style.display = "";
     }
@@ -658,20 +662,110 @@
   
 
   
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow floatable desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fal fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E7%AE%80%E6%9E%90"><span class="toc-text">题意简析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-text">分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
 
 </aside>
 
-<div class='l_main no_sidebar'>
+<div class='l_main'>
   <article
-  class="article post white-box reveal md shadow floatable article-type-docs"
-  id="docs" itemscope itemprop="blogPost">
+  class="article post white-box reveal md shadow floatable article-type-post"
+  id="post" itemscope itemprop="blogPost">
   
 
 
   
   <div class="article-meta" id="top">
     
+      
+
+  
+    <meting-js
+      mini='true'
+      volume='0.7'
+      loop='all'
+      order='list'
+      server='netease'
+      type='song'
+      id='16846091'>
+    </meting-js>
+  
+
+
     
+    
+    
+      <h1 class="title">
+        题解：CF1407D Discrete Centrifugal Jumps
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://i.loli.net/2021/08/14/zjnRLv3t876WSXV.png">
+    <p>Fieshy</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fal fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年8月12日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="题解：CF1407D Discrete Centrifugal Jumps" data-path="/2021/08/12/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1407D-Discrete-Centrifugal-Jumps/">
+        <i class="fal fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
     
   </div>
 
@@ -679,16 +773,55 @@
   
 
   
-  <p>阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴</p>
-<p>阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴</p>
-<p>阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴</p>
+  <h2 id="题意简析"><a href="#题意简析" class="headerlink" title="题意简析"></a>题意简析</h2><div class="note"><p>给你 $n$ 座楼，没座楼的高度为 $h_i$。</p></div>
+<div class="note"><p>初始在第一座楼，你需要跳到第 $n$ 座楼上。</p></div>
+<div class="note"><p>能从 $i$ 跳到 $j$ 需满足以下条件之一：</p></div>
 
+<p>$1. i = j + 1$</p>
+<p>$2. \min(h_i,h_j) &gt; \max(h_{i+1},h_{i+2},…,h_{j-2},h_{j-1})$</p>
+<p>$3. \max(h_i,h_j) &lt; \min(h_{i+1},h_{i+2},…,h_{j-2},h_{j-1})$</p>
+<div class="note"><p>问你最小需要跳几次？</p></div>
+<div class="note"><p>$2\le n \le 3\times 10^5$,$1\le h_i \le 10^9$。</p></div>
+
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>显然，这是一道 dp 题。但是直接暴力枚举 $i,j$，和枚举区间最大值和最小值，复杂度为 $O(n^3)$。可能某些神仙能把它优化到 $O(n^2)$，但是本题仍不能过。考虑 $O(n\log n)$ 的算法。</p>
+<p>这里考虑单调栈。什么是单调栈？</p>
+<p>单调栈，是指一个栈中，所有的元素均满足一种<strong>单调性</strong>。它可以是升序，也可以是降序，只要满足单调皆可。</p>
+<p>在这里，区间的最大值，最小值，都可以存到一个单调栈中，每次需要查找或更新时，将栈中的元素取出即可。这一复杂度为 $O(\log n)$。<del>就很神仙。</del></p>
+<p>那么在本题中，我们可以开两个栈，分别为升序和降序，表示题意中最大值和最小值能跳跃的条件。方便规定，我们将栈顶元素最大表示为降序。记 $s$ 表示降序的单调栈，且 $s$ 中保存的元素是它在 $h$ 中的编号。</p>
+<p>对于这种情况：假设我们当前枚举到了 $i$，让 $h_i$ 与栈顶 $h_{s_{tot}}$ 进行比较。如果 $h_i\le h_{s_{tot}}$，违背了单调性，需要让 $tot=tot-1$，但是在这种情况，满足我们跳跃的第二种条件。因为单调性，所以 $h_{s_{tot-1}}\le h_{s_{tot}}$，且 $h_{s_{tot}}$ 是 $[tot,i]$ 中的最大值，又已知  $h_i\le h_{s_{tot}}$，只要$h_i\not = h_{s_{tot}}$ 肯定满足 $\min(h_i,h_{s_{tot-1}})&lt;\max(h_{s_{tot}},…,h_{i-1})$，固有：<br>$$dp_i=\min(dp_i,dp_{s_{tot-1}}+1)$$</p>
+<p>升序同理。<br>当然，最初<br>$$dp_i=dp_{i-1}+1$$</p>
+<p>这样我们就轻松的解决了这道题。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><del>其实也没啥好总结的。</del> 用单调栈优化 dp。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">3e5</span> + <span class="number">7</span>;;</span><br><span class="line"><span class="keyword">int</span> s[N], dp[N], a[N], b[N];</span><br><span class="line"><span class="keyword">int</span> tot1, tot2;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;<span class="keyword">return</span> x &gt; y ? x : y;&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">min</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;<span class="keyword">return</span> x &lt; y ? x : y;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x = <span class="number">0</span>, f = <span class="number">1</span>; <span class="keyword">char</span> c = <span class="built_in">getchar</span>();</span><br><span class="line">	<span class="keyword">while</span> (!<span class="built_in">isdigit</span>(c))&#123;<span class="keyword">if</span> (c == <span class="string">&#x27;-&#x27;</span>) f = <span class="number">-1</span>; c = <span class="built_in">getchar</span>();&#125;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">isdigit</span>(c))&#123;x = (x &lt;&lt; <span class="number">3</span>) + (x &lt;&lt; <span class="number">1</span>) + c - <span class="string">&#x27;0&#x27;</span>; c = <span class="built_in">getchar</span>();&#125;</span><br><span class="line">	<span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n = <span class="built_in">read</span>();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++) s[i] = <span class="built_in">read</span>();</span><br><span class="line">	<span class="built_in">memset</span>(dp, <span class="number">0x3f3f3f3f</span>, <span class="built_in"><span class="keyword">sizeof</span></span>(dp));</span><br><span class="line">	a[++ tot1] = <span class="number">1</span>, b[++ tot2] = <span class="number">1</span>, dp[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i ++)&#123;</span><br><span class="line">		dp[i] = dp[i - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (tot1 &amp;&amp; s[i] &gt;= s[a[tot1]])&#123;</span><br><span class="line">			<span class="keyword">if</span> (s[i] != s[a[tot1]]) dp[i] = <span class="built_in">min</span>(dp[i], dp[a[tot1 - <span class="number">1</span>]] + <span class="number">1</span>);</span><br><span class="line">			tot1 --;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span> (tot2 &amp;&amp; s[i] &lt;= s[b[tot2]])&#123;</span><br><span class="line">			<span class="keyword">if</span> (s[i] != s[b[tot2]]) dp[i] = <span class="built_in">min</span>(dp[i], dp[b[tot2 - <span class="number">1</span>]] + <span class="number">1</span>);</span><br><span class="line">			tot2 --;</span><br><span class="line">		&#125; </span><br><span class="line">		a[++ tot1] = i, b[++ tot2] = i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, dp[n]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
   
   
   <div class='footer'>
     
     
+    
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fal fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="\2021\08\14\题解：CF1279F New Year and Handle Change\" title="题解：CF1279F New Year and Handle Change" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解：CF1279F New Year and Handle Change</span></a><a class="item" href="\2021\08\12\题解：CF1407D Discrete Centrifugal Jumps\" title="题解：CF1407D Discrete Centrifugal Jumps" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解：CF1407D Discrete Centrifugal Jumps</span></a><a class="item" href="\2021\08\16\题解：CF1468H K and Medians\" title="题解：CF1468H K and Medians" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解：CF1468H K and Medians</span></a><a class="item" href="\2021\08\12\hello-world\" title="Hello World" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Hello World</span></a></div></section></div>
+    
+    
+    <div class='copyright'>
+      <blockquote>
+        
+        
+        <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+        
+        
+        
+        <p>本文永久链接是：<a href=http://example.com/2021/08/12/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1407D-Discrete-Centrifugal-Jumps/>http://example.com/2021/08/12/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1407D-Discrete-Centrifugal-Jumps/</a></p>
+        
+        
+      </blockquote>
+    </div>
     
     
   </div>
@@ -700,13 +833,106 @@
   <div class='article-meta' id="bottom">
     <div class='new-meta-box'>
       
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-16T10:13:48+08:00">
+  <a class='notlink'>
+    <i class="fal fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年8月16日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/OI-%E9%A2%98%E8%A7%A3/" rel="nofollow"><i class="fal fa-hashtag fa-fw" aria-hidden="true"></i><p>OI/题解</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/08/12/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1407D-Discrete-Centrifugal-Jumps/&title=关于 - Fieshy's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/08/12/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1407D-Discrete-Centrifugal-Jumps/&title=关于 - Fieshy's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/08/12/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1407D-Discrete-Centrifugal-Jumps/&title=关于 - Fieshy's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
     </div>
   </div>
 
 
   
   
+  
+  
+  
 
+  
+  <div class="prev-next">
+    
+    <a class='prev' href='/2021/08/12/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1407D%20Discrete%20Centrifugal%20Jumps/'>
+      <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>题解：CF1407D Discrete Centrifugal Jumps</p>
+      <p class='content'>题意简析
+            给你 $n$ 座楼，没座楼的高度为 $h_i$。
+            
+
+            初始在第一座楼，你需要跳到第 $n$ 座楼上。
+     ...</p>
+    </a>
+    
+    
+    <a class='next' href='/2021/08/12/hello-world/'>
+      <p class='title'>Hello World<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+      <p class='content'>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any ...</p>
+    </a>
+    
+  </div>
   
 </article>
 
@@ -726,10 +952,60 @@
 
 
 
+<script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
 </div>
-
-
-
       </div>
       
   
