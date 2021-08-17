@@ -3,11 +3,11 @@
   <title>Fieshy&#39;s Blog</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://fieshy.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://fieshy.github.io/"/>
   <updated>2021-08-16T01:45:07.588Z</updated>
-  <id>http://example.com/</id>
+  <id>https://fieshy.github.io/</id>
   
   <author>
     <name>John Doe</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>题解：CF1468H K and Medians</title>
-    <link href="http://example.com/2021/08/16/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1468H%20K%20and%20Medians/"/>
-    <id>http://example.com/2021/08/16/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1468H%20K%20and%20Medians/</id>
+    <link href="https://fieshy.github.io/2021/08/16/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1468H%20K%20and%20Medians/"/>
+    <id>https://fieshy.github.io/2021/08/16/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1468H%20K%20and%20Medians/</id>
     <published>2021-08-16T01:13:32.000Z</published>
     <updated>2021-08-16T01:45:07.588Z</updated>
     
@@ -35,14 +35,14 @@
     
     
     
-    <category term="OI/题解" scheme="http://example.com/tags/OI-%E9%A2%98%E8%A7%A3/"/>
+    <category term="OI/题解" scheme="https://fieshy.github.io/tags/OI-%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>题解：CF1279F New Year and Handle Change</title>
-    <link href="http://example.com/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1279F%20New%20Year%20and%20Handle%20Change/"/>
-    <id>http://example.com/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1279F%20New%20Year%20and%20Handle%20Change/</id>
+    <link href="https://fieshy.github.io/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1279F%20New%20Year%20and%20Handle%20Change/"/>
+    <id>https://fieshy.github.io/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1279F%20New%20Year%20and%20Handle%20Change/</id>
     <published>2021-08-14T10:50:32.000Z</published>
     <updated>2021-08-16T01:45:58.423Z</updated>
     
@@ -58,14 +58,14 @@
     
     
     
-    <category term="OI/题解" scheme="http://example.com/tags/OI-%E9%A2%98%E8%A7%A3/"/>
+    <category term="OI/题解" scheme="https://fieshy.github.io/tags/OI-%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>题解：CF1523E Crypto Lights</title>
-    <link href="http://example.com/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1523E%20Crypto%20Lights/"/>
-    <id>http://example.com/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1523E%20Crypto%20Lights/</id>
+    <link href="https://fieshy.github.io/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1523E%20Crypto%20Lights/"/>
+    <id>https://fieshy.github.io/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1523E%20Crypto%20Lights/</id>
     <published>2021-08-14T10:28:32.000Z</published>
     <updated>2021-08-16T01:47:33.218Z</updated>
     
@@ -81,14 +81,14 @@
     
     
     
-    <category term="OI/题解" scheme="http://example.com/tags/OI-%E9%A2%98%E8%A7%A3/"/>
+    <category term="OI/题解" scheme="https://fieshy.github.io/tags/OI-%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>题解：CF1407D Discrete Centrifugal Jumps</title>
-    <link href="http://example.com/2021/08/12/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1407D%20Discrete%20Centrifugal%20Jumps/"/>
-    <id>http://example.com/2021/08/12/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1407D%20Discrete%20Centrifugal%20Jumps/</id>
+    <link href="https://fieshy.github.io/2021/08/12/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1407D%20Discrete%20Centrifugal%20Jumps/"/>
+    <id>https://fieshy.github.io/2021/08/12/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1407D%20Discrete%20Centrifugal%20Jumps/</id>
     <published>2021-08-12T07:13:32.000Z</published>
     <updated>2021-08-16T01:46:12.350Z</updated>
     
@@ -104,14 +104,14 @@
     
     
     
-    <category term="OI/题解" scheme="http://example.com/tags/OI-%E9%A2%98%E8%A7%A3/"/>
+    <category term="OI/题解" scheme="https://fieshy.github.io/tags/OI-%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>题解：CF1407D Discrete Centrifugal Jumps</title>
-    <link href="http://example.com/2021/08/12/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1407D-Discrete-Centrifugal-Jumps/"/>
-    <id>http://example.com/2021/08/12/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1407D-Discrete-Centrifugal-Jumps/</id>
+    <link href="https://fieshy.github.io/2021/08/12/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1407D-Discrete-Centrifugal-Jumps/"/>
+    <id>https://fieshy.github.io/2021/08/12/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1407D-Discrete-Centrifugal-Jumps/</id>
     <published>2021-08-12T07:13:32.000Z</published>
     <updated>2021-08-16T02:13:48.862Z</updated>
     
@@ -127,14 +127,14 @@
     
     
     
-    <category term="OI/题解" scheme="http://example.com/tags/OI-%E9%A2%98%E8%A7%A3/"/>
+    <category term="OI/题解" scheme="https://fieshy.github.io/tags/OI-%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2021/08/12/hello-world/"/>
-    <id>http://example.com/2021/08/12/hello-world/</id>
+    <link href="https://fieshy.github.io/2021/08/12/hello-world/"/>
+    <id>https://fieshy.github.io/2021/08/12/hello-world/</id>
     <published>2021-08-12T06:44:59.790Z</published>
     <updated>2021-08-16T02:13:48.860Z</updated>
     
