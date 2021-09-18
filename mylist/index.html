@@ -755,8 +755,8 @@
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Fri Sep 17 2021 14:01:54 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2021-09-17 日</div>
+            <div id="last-update" style="display: none;">Sat Sep 18 2021 12:38:48 GMT+0800 (中国标准时间)</div>
+            <div id="last-update-show">2021-09-18 日</div>
           
         </div>
         
@@ -806,7 +806,7 @@
           try {
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
           } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-09-17 日';
+            document.getElementById('last-update-show').innerHTML = '2021-09-18 日';
           }
         </script>
         
@@ -882,7 +882,7 @@
     <script>
       var now = new Date(); 
       function createtime() { 
-        var grt= new Date("08/12/2021 00:00:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+        var grt= new Date("08/12/2021 18:05:25");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
         now.setTime(now.getTime()+250); 
         days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
         hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
@@ -1350,6 +1350,11 @@
         $(".highlight .code pre").before(copyHtml);
         $(".article pre code").before(copyHtml);
         clipboard.off('success').on('success', function (e) {
+            $.message({
+                title: '复制成功',
+                message: "代码已复制，请遵守相关授权协议。",
+                type: 'success'
+              });
             let $btn = $(e.trigger);
             $btn.addClass('copied');
             let $icon = $($btn.find('i'));
