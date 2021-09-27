@@ -20,7 +20,7 @@
   <meta content="Fieshy&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1632310078699" as="style">
+  <link rel="preload" href="/css/style.css?time=1632723982033" as="style">
   <!-- 页面元数据 -->
   <title>说说 - Fieshy's Blog</title>
   <meta name="keywords" content="null">
@@ -44,7 +44,6 @@
   <!-- link -->
     <link rel="shortcut icon" type='image/x-icon' href="https://i.loli.net/2021/08/14/zjnRLv3t876WSXV.png">
   <!-- import link -->
-      <link href="https://cdn.jsdelivr.net/gh/inkss/common@1/css/roboto.min.css" rel="stylesheet" media="print" onload="this.media='all'">
   <style>
     /* 
       source/css/first.styl
@@ -2303,8 +2302,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1632310078699" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1632310078699"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1632723982033" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1632723982033"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("user-color-scheme")
       if(userColorScheme){
@@ -3937,7 +3936,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
     volantis.import.jQuery().then(()=>{
-      volantis.js('/js/rightMenu.js?time=1632310078699') // 此处依赖JQ
+      volantis.js('/js/rightMenu.js?time=1632723982033') // 此处依赖JQ
     })
   </script>
 
@@ -4049,19 +4048,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1632310078699")
+        volantis.js("/js/plugins/sites.js?time=1632723982033")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1632310078699")
+        volantis.js("/js/plugins/friends.js?time=1632723982033")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1632310078699")
+        volantis.js("/js/plugins/contributors.js?time=1632723982033")
       }
     
   };
@@ -4136,7 +4135,7 @@ volantis.pjax.push(bindToggleButton);
 
     
       // 右键 music 需要在 APlayer  MetingJS 之后加载
-      await volantis.js('/js/aplayer.js?time=1632310078701')
+      await volantis.js('/js/aplayer.js?time=1632723982034')
       volantis.APlayerController.music = true;
     
   })();
@@ -4251,7 +4250,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1632310078699.js"></script>
+<script src="/js/app.js?time=1632723982033.js"></script>
 
 
 <!-- optional -->
@@ -4488,8 +4487,8 @@ volantis.pjax.push(bindToggleButton);
   <script>
   volantis.message = (title, message, icon = 'fas fa-info-circle light-blue', time = '5000', position = 'topRight', done = null) => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1632310078699')
-      volantis.js('/js/message.js?time=1632310078699', () => {
+      volantis.css('/css/message.css?time=1632723982033')
+      volantis.js('/js/message.js?time=1632723982033', () => {
         tozashMessage(title, message, icon, time, position, done);
       });
     } else {
@@ -4522,8 +4521,8 @@ volantis.pjax.push(bindToggleButton);
 
   volantis.question = (title, message, success = null, cancel = null, done = null, icon = 'fas fa-question-circle light-blue', time = '20000') => {
     if (typeof iziToast == "undefined") {
-      volantis.css('/css/message.css?time=1632310078699')
-      volantis.js('/js/message.js?time=1632310078699', () => {
+      volantis.css('/css/message.css?time=1632723982033')
+      volantis.js('/js/message.js?time=1632723982033', () => {
         tozashQuestion(title, message, icon , time, success, cancel, done);
       });
     } else {
@@ -4728,12 +4727,10 @@ volantis.pjax.push(bindToggleButton);
   
   <!-- Custom Files bodyEnd end-->
   <!--浏览器搞笑标题-->
+  <!--页面点击小红心-->
+  <script type="text/javascript" src="/js/love.js"></script>
   <script type="text/javascript" src="/js/FunnyTitle.js"></script>
   <!--动态线条背景-->
-  <script type="text/javascript"
-  color="220,220,220" opacity='1.0' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
-  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":250,"height":500},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
-</html>
-
-<!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/love.js"></script>
+  <script type="text/javascript"color="220,220,220" opacity='1.0' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  < /body>
+< /html>
