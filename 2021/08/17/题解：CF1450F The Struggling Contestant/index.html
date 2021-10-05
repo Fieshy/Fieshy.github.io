@@ -637,7 +637,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
 
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -788,7 +788,7 @@
 <h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><h6 id="本蒟蒻居然第一个想到的是模拟-贪心"><a href="#本蒟蒻居然第一个想到的是模拟-贪心" class="headerlink" title="本蒟蒻居然第一个想到的是模拟+贪心"></a><del>本蒟蒻居然第一个想到的是模拟+贪心</del></h6><p>题意很简单，要求不相邻的个数要最小，马上想到贪心，最好一直走<strong>相邻</strong>的不一样的数，直到相邻数相同，再跳过去选一个不同的。<strong>那我们应该怎么走怎么选呢？</strong></p>
 <p>首先，对于无解的情况：<br>显然，当一个标签出现的次数大于 $\left\lceil\dfrac{n}{2}\right\rceil$ 时，肯定是无解的。换句话说，如果 $a_i$ 出现次数大于 $\left\lceil\dfrac{n}{2}\right\rceil$ ,则输出 $-1$ 。</p>
 <p>接下来考虑有解的情况。我们可以将整个 $a$ 数组分成几个小段进行讨论。<br>假设 $p$ 是满足条件的排列，我们可以在 $p$ 中不相邻的相邻索引之间添加一个分隔符。如果 $k$ 是 $p$ 中“跳跃”的数量，那么我们已经将数组 $a$  分成 $k+1$ 个连续的段。我们可以按正向或反向顺序扫描每个段。然后对片段进行重新排序和反转，以使没有两个相邻的标签相等。</p>
-<p>显然，对于 $a_i=a_{i+1}$ 我们需要在 $i$ 和 $i+1$ 之间进行切割。现在，我们只需要考虑这些段的端点，并且我们需要一个条件，以便何时可以避免连接相等的端点。对于标签 $x$ ，将 $f_x$ 定义为以 $x$ 显示为段的端点的次数。<strong>请注意，如果一个段仅包含一个标记，我们将<br>$x$计数两次，作为左右端点。</strong></p>
+<p>显然，对于 $a_i=a_{i+1}$ 我们需要在 $i$ 和 $i+1$ 之间进行切割。现在，我们只需要考虑这些段的端点，并且我们需要一个条件，以便何时可以避免连接相等的端点。对于标签 $x$ ，将 $f_x$ 定义为以 $x$ 显示为段的端点的次数。<strong>请注意，如果一个段仅包含一个标记，我们将 $x$ 计数两次，作为左右端点。</strong></p>
 <p>当且仅当对于所有标签 $x$ ，它都保持 $f_x$ 时，才能对段进行有效的重新排序。如果存在解，那么 $f_x≤k+2$ 。</p>
 <p>简单证一下:<br>考虑将段重新排序为 $(y_1$，$y_2)$，$(y_3$，$y_4)$，…，$(y_{2k+1}$，$y_{2k+2})$ 。其中， $y_{2i-1}$ 和 $y_{2i}$ 是按照解决方案顺序出现在第 $i$ 个分段的端点。由于 $y_{2i}$ 和 $y_{2i+1}$ 连接在一起,它们不能都是 $x$ 。它可以是 $y_1=x$ ，也可以是 $y_{2k+2}=x$ ，但由于这些连接，最多一半的剩余端点（其中有 $2k$ ）可以是 $x$ 。所以 $f_x≤k+2$ 。</p>
 <p>我们已证明如果 $f_x≤k+2$ 对于所有标签 $x$ ，我们可以构造一个解决方案。我们继续在 $k$ 上进行归纳。如果 $k=0$ ，则只有一个段，我们就完成了。如果 $k≥1$ .让 $x$ 是最大 $f_x$ 的任何标签。选择一个以 $x$ 为端点的段和另一个以 $y$ 为端点的段( $y\not=x$ )作为端点(<strong>注意，这样的一对总是存在的</strong>）。将选定的 $x$ 和 $y$ 连接在一起，将它们合并为一个段。这样段的数量减少了 $1$ 个，作为端点的 $x$ 和 $y$ 的频率减少了 $1$ 个。进行此连接后，该条件显然适用于 $x$ 和 $y$ 。对于其他标签   $z$（ $z\not=x$ 、 $ z\not=y$ ），在操作之前保持 $f_z≤(2k+2)-f_x ≤(2k+2)-f_z$ 和 $f_z≤k+1$ 。操作后， $k$ 减小， $f_z$ 不变，因此 $f_z≤k+2$ 成立。通过归纳，存在解决方案。</p>
@@ -811,7 +811,7 @@
       <i class="fal fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
     </section>
     <section class='body'>
-      <div class="vlts-rps"><a class="item" href="\2021\08\14\题解：CF1279F New Year and Handle Change\" title="题解：CF1279F New Year and Handle Change" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解：CF1279F New Year and Handle Change</span></a><a class="item" href="\2021\08\17\题解：CF1363F Rotating Substrings\" title="题解：CF1363F Rotating Substrings" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解：CF1363F Rotating Substrings</span></a><a class="item" href="\2021\08\12\题解：CF1407D Discrete Centrifugal Jumps\" title="题解：CF1407D Discrete Centrifugal Jumps" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解：CF1407D Discrete Centrifugal Jumps</span></a><a class="item" href="\2021\08\16\题解：CF1468H K and Medians\" title="题解：CF1468H K and Medians" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解：CF1468H K and Medians</span></a></div></section></div>
+      <div class="vlts-rps"><a class="item" href="\2021\08\14\题解：CF1279F New Year and Handle Change\" title="题解：CF1279F New Year and Handle Change" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解：CF1279F New Year and Handle Change</span></a><a class="item" href="\2021\08\12\题解：CF1407D Discrete Centrifugal Jumps\" title="题解：CF1407D Discrete Centrifugal Jumps" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解：CF1407D Discrete Centrifugal Jumps</span></a><a class="item" href="\2021\08\16\题解：CF1468H K and Medians\" title="题解：CF1468H K and Medians" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解：CF1468H K and Medians</span></a><a class="item" href="\2021\08\17\题解：CF1363F Rotating Substrings\" title="题解：CF1363F Rotating Substrings" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解：CF1363F Rotating Substrings</span></a></div></section></div>
     
     
     <div class='copyright'>
@@ -840,10 +840,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-10-04T09:03:33+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-10-05T10:42:07+08:00">
   <a class='notlink'>
     <i class="fal fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年10月4日</p>
+    <p>更新于：2021年10月5日</p>
   </a>
 </div>
 
@@ -921,6 +921,17 @@
 
   
   <div class="prev-next">
+    
+    <a class='prev' href='/2021/10/04/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1579G%20Minimal%20Coverage/'>
+      <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>题解：CF1579G Minimal Coverage</p>
+      <p class='content'>题意简析有多组数据
+
+            给你 $n$ 条线段，告诉你每条线段的长度。
+            
+
+            你需要把它们放在一条无限长的数轴上。
+      ...</p>
+    </a>
     
     
     <a class='next' href='/2021/08/17/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1363F%20Rotating%20Substrings/'>
@@ -2105,4 +2116,5 @@ valine.Q('*').limit(7).find().then(function (comments) {
   <script type="text/javascript"
   color="220,220,220" opacity='1.0' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
   </script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":250,"height":500},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":250,"height":500},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>

@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="index,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,7 +16,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2021/8 - Fieshy&#39;s Blog</title>
+  <title>题解：CF1579G Minimal Coverage - Fieshy&#39;s Blog</title>
+  
+    <meta name="keywords" content="OI/题解">
   
 
   
@@ -458,7 +458,7 @@
 
   
   
-      <div class='cover-wrapper  featured' style="display: none;">
+      <div class='cover-wrapper post featured' style="display: none;">
         <canvas id="header_canvas" style="position:absolute;bottom:0;z-index: 1;" width="900" height="350"></canvas>
         
           <div class='cover-bg lazyload placeholder' data-bg="https://i.loli.net/2021/09/30/Bk8HCwWx6O2UrQ3.jpg"></div>
@@ -544,8 +544,8 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">题解：CF1579G Minimal Coverage</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -554,14 +554,14 @@
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("none" == "none") { // 移除封面
+  if ("half" == "none") { // 移除封面
     document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("none" == "half") { // 半屏
+    if ("half" == "half") { // 半屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("none" == "full") { // 全屏
+    } else if ("half" == "full") { // 全屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
       document.getElementsByClassName('scroll-down')[0].style.display = "";
     }
@@ -668,153 +668,22 @@
     
     
 
-  
 
-  
 
-  
+  <section class="widget toc-wrapper shadow floatable desktop mobile" id="toc-div" >
     
-    
-
-<section class="widget text shadow floatable desktop">
-  
   <header>
     
-      <i class="fal fa-comments fa-fw" aria-hidden="true"></i><span class='name'>最新评论</span>
+      <i class="fal fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
-  <div class='content'>
-    
-      <div id="hot-comments"></div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget shadow floatable desktop mobile">
-  
-  <header>
-    
-      <i class="fal fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>7 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2021/08/12'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>6.7k 字</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Tue Oct 05 2021 10:42:38 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2021-10-05 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-10-05 日';
-          }
-        </script>
-        
-      
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E7%AE%80%E6%9E%90"><span class="toc-text">题意简析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-text">分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
     </div>
-  </div>
-</section>
+  </section>
+
 
   
 
@@ -822,347 +691,330 @@
 </aside>
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
+  <article
+  class="article post white-box reveal md shadow floatable article-type-post"
+  id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
     
+      
+
+  
+    <meting-js
+      mini='true'
+      volume='0.7'
+      loop='all'
+      order='list'
+      server='netease'
+      type='song'
+      id='16846091'>
+    </meting-js>
+  
+
+
+    
+    
+    
+      <h1 class="title">
+        题解：CF1579G Minimal Coverage
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://i.loli.net/2021/08/14/zjnRLv3t876WSXV.png">
+    <p>Fieshy</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fal fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年10月4日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="题解：CF1579G Minimal Coverage" data-path="/2021/10/04/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1579G%20Minimal%20Coverage/">
+        <i class="fal fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    
+  </div>
+
+
+  
+
+  
+  <h2 id="题意简析"><a href="#题意简析" class="headerlink" title="题意简析"></a>题意简析</h2><p>有多组数据</p>
+<div class='checkbox'><input type="radio" />
+            <p>给你 $n$ 条线段，告诉你每条线段的<strong>长度</strong>。</p>
+            </div>
+<div class='checkbox'><input type="radio" />
+            <p>你需要把它们放在一条<strong>无限长的数轴</strong>上。</p>
+            </div>
+<div class='checkbox'><input type="radio" />
+            <p>放置需满足<strong>当前线段的起点</strong>是<strong>前一个线段的终点</strong>，特别的第一个线段的起点为 $0$。</p>
+            </div>
+
+<p>也就是说，若前一个线段的终点是 $x$,当前长度为 $d$, 那么这个线段必须放在 $[x-d,x]$ 终点变为 $x-d$，或 $[x, x + d]$ 终点变为 $x + d$。</p>
+<div class='checkbox'><input type="radio" />
+            <p>请问放置完后所有线段的最小覆盖长度是多少？</p>
+            </div>
+<div class='checkbox'><input type="radio" />
+            <p>$1\le t \le 10^4$</p>
+            </div>
+<div class='checkbox'><input type="radio" />
+            <p>$1\le n \le 10^4$</p>
+            </div>
+
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p><del>好耶，居然是DP题</del></p>
+<p>我们把覆盖看成跳跃，一条条跳进行决策显然不现实<del>贪心写挂了</del>。通过观察可以证明，最后的答案肯定不超过 $2\times l_{\max}$。因为所有的线段都可以在里面左右跳，而不出去（也可参见下面的解释）。</p>
+<p>由于数轴是无限长的，从哪里开始没有影响。我们可以规定所有线段在 $[-l_{\max},l_{\max}]$ 之间，如果当前上一个结束位置大于 $0$，就向左跳，否则，就向右跳，这样就不会跳出边界。</p>
+<p>解决了如何操作的问题，接下来首先是dp的状态：$dp_{i,l}$ 用来表示当前 $i$ 的结束点到最左边的距离是 $l$ 时，到最右边的距离最小值。于是当前覆盖的长度即为 $l+dp_{i,l}$。最后的答案即为 $\min(l+dp_{n,l})(0\le l\le 2\times l_{\max})$</p>
+<p>然后是转移：<br>预处理：$dp_{i,j}=inf,dp_{0,0}=0$ 如果等于 $inf$，说明无法跳到，直接跳出。</p>
+<p>对于每个线段考虑向左放还是向右放<br>对于 $a_{i+1}$, 如果考虑向左放，那么到左边界的距离变为 $\max(l-a_{i+1},0)$ (如果没有超过范围，就减一下，否则它就是现在的最左边)，到右边界的距离为 $dp_{i,l}+a_{i+1}$ (因为向左跳了那么多)。所以有<br>    $$dp_{i+1,\max(0,l-a_{i+1})} = min(dp_{i+1,\max(0,l-a_{i+1})},dp_{i,l}+a_{i+1})$$<br>如果考虑向右放，那么到右边界的距离变为 $\max(dp_{i,l}-a_{i+1},0)$，到左边界的距离为 $l+a_{i+1}$<br>   $$dp_{i+1,l+a_{i+1}}=min(dp_{i+1,l+a_{i+1}},\max(dp_{i,l}-a_{i+1},0))$$<br>    <div class='checkbox'><input type="radio" />
+            <p>其中 $0\le l\le 2\times l_{\max}$</p>
+            </div></p>
+<div class="note"><p>然后我们就愉快地解决了， 复杂度 $O(n\times l_{\max})$</p></div>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><div class="note"><p>想对状态还是。。嗯不难想的 <del>总之也是道神仙题</del></p></div>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1000000000</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T = <span class="built_in">read</span>();</span><br><span class="line">    <span class="keyword">while</span> (T --) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = <span class="built_in">read</span>();</span><br><span class="line">        <span class="keyword">int</span> maxx = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            a[i] = <span class="built_in">read</span>();</span><br><span class="line">            maxx = <span class="built_in">max</span>(maxx, a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">dp</span>(n + <span class="number">1</span>, vector&lt;<span class="keyword">int</span>&gt;(<span class="number">2</span> * maxx + <span class="number">1</span>, INF));</span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> left = <span class="number">0</span>; left &lt;= <span class="number">2</span> * maxx; left++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (dp[i][left] == INF)</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                dp[i + <span class="number">1</span>][<span class="built_in">max</span>(left - a[i], <span class="number">0</span>)] = <span class="built_in">min</span>(dp[i + <span class="number">1</span>][<span class="built_in">max</span>(left - a[i], <span class="number">0</span>)], dp[i][left] + a[i]);</span><br><span class="line">                <span class="keyword">if</span> (left + a[i] &lt; dp[i + <span class="number">1</span>].<span class="built_in">size</span>()) &#123;</span><br><span class="line">                    dp[i + <span class="number">1</span>][left + a[i]] = <span class="built_in">min</span>(dp[i + <span class="number">1</span>][left + a[i]], <span class="built_in">max</span>(dp[i][left] - a[i], <span class="number">0</span>));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">2</span> * maxx + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> left = <span class="number">0</span>; left &lt;= <span class="number">2</span> * maxx; left++)</span><br><span class="line">            ans = <span class="built_in">min</span>(ans, left + dp[n][left]);</span><br><span class="line">        <span class="built_in">write</span>(ans), <span class="built_in">puts</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+  
+  
+  
+  <div class='footer'>
+    
+    
+    
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fal fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="\2021\08\14\题解：CF1279F New Year and Handle Change\" title="题解：CF1279F New Year and Handle Change" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解：CF1279F New Year and Handle Change</span></a><a class="item" href="\2021\08\12\题解：CF1407D Discrete Centrifugal Jumps\" title="题解：CF1407D Discrete Centrifugal Jumps" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解：CF1407D Discrete Centrifugal Jumps</span></a><a class="item" href="\2021\08\16\题解：CF1468H K and Medians\" title="题解：CF1468H K and Medians" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解：CF1468H K and Medians</span></a><a class="item" href="\2021\08\17\题解：CF1363F Rotating Substrings\" title="题解：CF1363F Rotating Substrings" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解：CF1363F Rotating Substrings</span></a></div></section></div>
+    
+    
+    <div class='copyright'>
+      <blockquote>
+        
+        
+        <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+        
+        
+        
+        <p>本文永久链接是：<a href=https://fieshy.github.io/2021/10/04/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1579G%20Minimal%20Coverage/>https://fieshy.github.io/2021/10/04/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1579G%20Minimal%20Coverage/</a></p>
+        
+        
+      </blockquote>
+    </div>
+    
+    
+  </div>
+  
+  
+  
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-10-04T11:39:53+08:00">
+  <a class='notlink'>
+    <i class="fal fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年10月4日</p>
+  </a>
+</div>
+
+        
       
         
           
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/OI-%E9%A2%98%E8%A7%A3/" rel="nofollow"><i class="fal fa-hashtag fa-fw" aria-hidden="true"></i><p>OI/题解</p></a></div>
+
+
         
       
-    
-    
-      
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/17/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1450F%20The%20Struggling%20Contestant/">
-        题解：CF1450F The Struggling Contestant
-      </a>
-    </h2>
-  
-  <div class='md'>
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        这题居然是CF2400题意简析
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://fieshy.github.io/2021/10/04/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1579G%20Minimal%20Coverage/&title=题解：CF1579G Minimal Coverage - Fieshy's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://fieshy.github.io/2021/10/04/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1579G%20Minimal%20Coverage/&title=题解：CF1579G Minimal Coverage - Fieshy's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://fieshy.github.io/2021/10/04/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1579G%20Minimal%20Coverage/&title=题解：CF1579G Minimal Coverage - Fieshy's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+  
+  
+  
+
+  
+  <div class="prev-next">
+    
+    
+    <a class='next' href='/2021/08/17/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1450F%20The%20Struggling%20Contestant/'>
+      <p class='title'>题解：CF1450F The Struggling Contestant<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+      <p class='content'>这题居然是CF2400题意简析
             有一个数组 $a_i$ 需要确定一个顺序，把每个$a_i$都遍历一遍，所得顺序记为 $p_i$ 。
             
 
-            需要保证对任意的 $i$ 都有：
-            
-$$a_{p_i}\not=a_{p_{i+1}}$$
-
-            记 $p$ 的花费为有多少个 $i$ 满足 ...
-      
+     ...</p>
+    </a>
     
   </div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2021-08-17</time>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2021/08/17/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1450F%20The%20Struggling%20Contestant/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
+</article>
 
+
+
+
+  <article class="post white-box reveal shadow floatable" id="comments">
+    <p ct><i class='fal fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/17/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1363F%20Rotating%20Substrings/">
-        题解：CF1363F Rotating Substrings
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        题意简析
-            给你两个长度为 $n$ 的字符串，只有小写字母。
-            
+  </article>
 
-            定义每次操作为选泽 $s$ 的一个字串
-            
-$$s_l , s_{l+1}, …,s_{r-1},s_r$$，
 
-            然后将它改为
-             
-$$s_r,s_l,s_{l+1},…,s_{r-1}$...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2021-08-17</time>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2021/08/17/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1363F%20Rotating%20Substrings/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
+
+
+
+<script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
 
 </div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/16/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1468H%20K%20and%20Medians/">
-        题解：CF1468H K and Medians
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        题意简析
-            给定两个序列，其中一个是给定的单调不减的序列。
-            
-
-            现在你可以若干次操作，每次操作选择序列 $a$ 的 $k$ 个整数，然后删除这 $k$ 个数里除了他们的中位数的其他 $k-1$ 个数。问你能否通过若干次操作，得到序列 $b$ 。
-            
-
-分析因为每次操作之后，我们都会去掉 $k-1$ 个...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2021-08-16</time>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2021/08/16/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1468H%20K%20and%20Medians/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1279F%20New%20Year%20and%20Handle%20Change/">
-        题解：CF1279F New Year and Handle Change
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        题意简析
-            给你一个字符串，长度为 $n$，区分大小写，也可看成零一串。
-            
-
-            每次操作把一段长度为 $len$ 的所有字符变成大写或小写，最多进行 $k$ 次操作。
-            
-
-            你需要最小化大小写字母个数的最小值（或 $0$，$1$ 个数的最小值）。
-            
-
-  ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2021-08-14</time>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1279F%20New%20Year%20and%20Handle%20Change/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1523E%20Crypto%20Lights/">
-        题解：CF1523E Crypto Lights
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        题意简析
-            有多组数据，给你 $n$ 盏灯，一开始都是暗的每次，点亮一盏灯。
-            
-
-            如果每次点亮后，存在一个长度为 $k$ 的区间中，不止一盏灯亮，则停止。
-            
-
-            求期望点亮多少盏灯？对 $10^9+7$ 取模。
-            
-
-            $2\le k...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2021-08-14</time>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2021/08/14/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1523E%20Crypto%20Lights/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/12/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1407D%20Discrete%20Centrifugal%20Jumps/">
-        题解：CF1407D Discrete Centrifugal Jumps
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        题意简析
-            给你 $n$ 座楼，没座楼的高度为 $h_i$。
-            
-
-            初始在第一座楼，你需要跳到第 $n$ 座楼上。
-            
-
-            能从 $i$ 跳到 $j$ 需满足以下条件之一：
-            
-$$1. i = j + 1$$$$2. \min(h_i,h_j) &gt; \...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2021-08-12</time>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2021/08/12/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1407D%20Discrete%20Centrifugal%20Jumps/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
-
-<!-- beaudar评论插件 -->
-
-
-	
-</div>
-
-
       </div>
       
   
