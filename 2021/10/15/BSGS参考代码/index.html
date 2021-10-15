@@ -16,7 +16,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>说说 - Fieshy&#39;s Blog</title>
+  <title>BSGS参考代码 - Fieshy&#39;s Blog</title>
+  
+    <meta name="keywords" content="数论">
   
 
   
@@ -456,7 +458,7 @@
 
   
   
-      <div class='cover-wrapper page featured' style="display: none;">
+      <div class='cover-wrapper post featured' style="display: none;">
         <canvas id="header_canvas" style="position:absolute;bottom:0;z-index: 1;" width="900" height="350"></canvas>
         
           <div class='cover-bg lazyload placeholder' data-bg="https://i.loli.net/2021/09/30/Bk8HCwWx6O2UrQ3.jpg"></div>
@@ -535,8 +537,8 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">BSGS参考代码</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -545,14 +547,14 @@
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("none" == "none") { // 移除封面
+  if ("half" == "none") { // 移除封面
     document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("none" == "half") { // 半屏
+    if ("half" == "half") { // 半屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("none" == "full") { // 全屏
+    } else if ("half" == "full") { // 全屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
       document.getElementsByClassName('scroll-down')[0].style.display = "";
     }
@@ -659,175 +661,7 @@
     
     
 
-  
 
-  
-
-  
-    
-    
-
-<section class="widget text shadow floatable desktop">
-  
-  <header>
-    
-      <i class="fal fa-comments fa-fw" aria-hidden="true"></i><span class='name'>最新评论</span>
-    
-  </header>
-
-
-  <div class='content'>
-    
-      <div id="hot-comments"></div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget shadow floatable desktop mobile">
-  
-  <header>
-    
-      <i class="fal fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>9 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2021/08/12'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>7.8k 字</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Fri Oct 15 2021 20:16:39 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2021-10-15 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-10-15 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-
-
-  <section class="widget toc-wrapper shadow floatable desktop mobile" id="toc-div" >
-    
-  <header>
-    
-      <i class="fal fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#2021%E5%B9%B49%E6%9C%8818%E6%97%A5"><span class="toc-text">2021年9月18日</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2021%E5%B9%B48%E6%9C%8812%E6%97%A5-%E8%BF%99%E6%98%AF%E6%9C%AC%E4%BA%BA%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2"><span class="toc-text">2021年8月12日 这是本人的第一个个人博客</span></a></li></ol>
-    </div>
-  </section>
 
 
   
@@ -837,18 +671,34 @@
 
 <div class='l_main'>
   <article
-  class="article post white-box reveal md shadow floatable article-type-page"
-  id="page" itemscope itemprop="blogPost">
+  class="article post white-box reveal md shadow floatable article-type-post"
+  id="post" itemscope itemprop="blogPost">
   
 
 
   
   <div class="article-meta" id="top">
     
+      
+
+  
+    <meting-js
+      mini='true'
+      volume='0.7'
+      loop='all'
+      order='list'
+      server='netease'
+      type='song'
+      id='41650135'>
+    </meting-js>
+  
+
+
+    
     
     
       <h1 class="title">
-        说说
+        BSGS参考代码
       </h1>
       <div class='new-meta-box'>
         
@@ -872,7 +722,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fal fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2021年8月14日</p>
+    <p>发布于：2021年10月15日</p>
   </a>
 </div>
 
@@ -883,7 +733,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="说说" data-path="/bb/">
+      <div id="lc-pv" data-title="BSGS参考代码" data-path="/2021/10/15/BSGS%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81/">
         <i class="fal fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -902,11 +752,40 @@
   
 
   
-  <h3 id="2021年9月18日"><a href="#2021年9月18日" class="headerlink" title="2021年9月18日"></a>2021年9月18日</h3><p>建站也有一个月了<br>中间大调小调<br><del>还差点丢了</del><br>目前总体表现良好<br>之后也会慢慢调<br>这里有人会弄暗黑模式吗？</p>
-<h3 id="2021年8月12日-这是本人的第一个个人博客"><a href="#2021年8月12日-这是本人的第一个个人博客" class="headerlink" title="2021年8月12日 这是本人的第一个个人博客"></a>2021年8月12日 这是本人的第一个个人博客</h3><p><del>由于本人是个蒟蒻，从8月初弄了好久才完成</del></p>
-<p>第一次建站还有诸多不妥之处，还请多指教</p>
-
+  <p>下面的代码实现的找原根、离散对数解和原问题所有解的过程。为进阶篇的参考代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br></pre></td><td class="code"><pre><span class="line">int gcd(int a, int b) &#123; return a ? gcd(b % a, a) : b; &#125;</span><br><span class="line"></span><br><span class="line">int powmod(int a, int b, int p) &#123;</span><br><span class="line"></span><br><span class="line"> int res = 1;</span><br><span class="line"></span><br><span class="line"> while (b &gt; 0) &#123;</span><br><span class="line"></span><br><span class="line">  if (b &amp; 1) res = res * a % p;</span><br><span class="line"></span><br><span class="line">  a = a * a % p, b &gt;&gt;= 1;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> return res;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Finds the primitive root modulo p</span><br><span class="line"></span><br><span class="line">int generator(int p) &#123;</span><br><span class="line"></span><br><span class="line"> vector&lt;int&gt; fact;</span><br><span class="line"></span><br><span class="line"> int phi = p - 1, n = phi;</span><br><span class="line"></span><br><span class="line"> for (int i = 2; i * i &lt;= n; ++i) &#123;</span><br><span class="line"></span><br><span class="line">  if (n % i == 0) &#123;</span><br><span class="line"></span><br><span class="line">   fact.push_back(i);</span><br><span class="line"></span><br><span class="line">   while (n % i == 0) n /= i;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> if (n &gt; 1) fact.push_back(n);</span><br><span class="line"></span><br><span class="line"> for (int res = 2; res &lt;= p; ++res) &#123;</span><br><span class="line"></span><br><span class="line">  bool ok = true;</span><br><span class="line"></span><br><span class="line">  for (int factor : fact) &#123;</span><br><span class="line"></span><br><span class="line">   if (powmod(res, phi / factor, p) == 1) &#123;</span><br><span class="line"></span><br><span class="line">​    ok = false;</span><br><span class="line"></span><br><span class="line">​    break;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  if (ok) return res;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> return -1;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// This program finds all numbers x such that x^k=a (mod n)</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line"></span><br><span class="line"> int n, k, a;</span><br><span class="line"></span><br><span class="line"> scanf(&quot;%d %d %d&quot;, &amp;n, &amp;k, &amp;a);</span><br><span class="line"></span><br><span class="line"> if (a == 0) return puts(&quot;1\n0&quot;), 0;</span><br><span class="line"></span><br><span class="line"> int g = generator(n);</span><br><span class="line"></span><br><span class="line"> // Baby-step giant-step discrete logarithm algorithm</span><br><span class="line"></span><br><span class="line"> int sq = (int)sqrt(n + .0) + 1;</span><br><span class="line"></span><br><span class="line"> vector&lt;pair&lt;int, int&gt;&gt; dec(sq);</span><br><span class="line"></span><br><span class="line"> for (int i = 1; i &lt;= sq; ++i)</span><br><span class="line"></span><br><span class="line">  dec[i - 1] = &#123;powmod(g, i * sq * k % (n - 1), n), i&#125;;</span><br><span class="line"></span><br><span class="line"> sort(dec.begin(), dec.end());</span><br><span class="line"></span><br><span class="line"> int any_ans = -1;</span><br><span class="line"></span><br><span class="line"> for (int i = 0; i &lt; sq; ++i) &#123;</span><br><span class="line"></span><br><span class="line">  int my = powmod(g, i * k % (n - 1), n) * a % n;</span><br><span class="line"></span><br><span class="line">  auto it = lower_bound(dec.begin(), dec.end(), make_pair(my, 0));</span><br><span class="line"></span><br><span class="line">  if (it != dec.end() &amp;&amp; it-&gt;first == my) &#123;</span><br><span class="line"></span><br><span class="line">   any_ans = it-&gt;second * sq - i;</span><br><span class="line"></span><br><span class="line">   break;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> if (any_ans == -1) return puts(&quot;0&quot;), 0;</span><br><span class="line"></span><br><span class="line"> // Print all possible answers</span><br><span class="line"></span><br><span class="line"> int delta = (n - 1) / gcd(k, n - 1);</span><br><span class="line"></span><br><span class="line"> vector&lt;int&gt; ans;</span><br><span class="line"></span><br><span class="line"> for (int cur = any_ans % delta; cur &lt; n - 1; cur += delta)</span><br><span class="line"></span><br><span class="line">  ans.push_back(powmod(g, cur, n));</span><br><span class="line"></span><br><span class="line"> sort(ans.begin(), ans.end());</span><br><span class="line"></span><br><span class="line"> printf(&quot;%d\n&quot;, ans.size());</span><br><span class="line"></span><br><span class="line"> for (int answer : ans) printf(&quot;%d &quot;, answer);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
   
+  
+  
+  <div class='footer'>
+    
+    
+    
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fal fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="\2021\10\13\BSGS\" title="BSGC(大步小步算法)" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">BSGC(大步小步算法)</span></a><a class="item" href="\2021\08\14\题解：CF1279F New Year and Handle Change\" title="题解：CF1279F New Year and Handle Change" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解：CF1279F New Year and Handle Change</span></a></div></section></div>
+    
+    
+    <div class='copyright'>
+      <blockquote>
+        
+        
+        <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+        
+        
+        
+        <p>本文永久链接是：<a href=https://fieshy.github.io/2021/10/15/BSGS%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81/>https://fieshy.github.io/2021/10/15/BSGS%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81/</a></p>
+        
+        
+      </blockquote>
+    </div>
+    
+    
+  </div>
   
   
   
@@ -916,10 +795,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-09-18T15:00:59+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-10-15T20:15:28+08:00">
   <a class='notlink'>
     <i class="fal fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年9月18日</p>
+    <p>更新于：2021年10月15日</p>
   </a>
 </div>
 
@@ -927,6 +806,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E8%AE%BA/" rel="nofollow"><i class="fal fa-hashtag fa-fw" aria-hidden="true"></i><p>数论</p></a></div>
+
 
         
       
@@ -938,7 +820,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://fieshy.github.io/bb/index.html&title=说说 - Fieshy's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://fieshy.github.io/2021/10/15/BSGS%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81/&title=BSGS参考代码 - Fieshy's Blog&summary="
           
           >
           
@@ -950,7 +832,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://fieshy.github.io/bb/index.html&title=说说 - Fieshy's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://fieshy.github.io/2021/10/15/BSGS%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81/&title=BSGS参考代码 - Fieshy's Blog&summary="
           
           >
           
@@ -962,7 +844,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://fieshy.github.io/bb/index.html&title=说说 - Fieshy's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://fieshy.github.io/2021/10/15/BSGS%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81/&title=BSGS参考代码 - Fieshy's Blog&summary="
           
           >
           
@@ -988,7 +870,21 @@
 
   
   
+  
+  
+  
 
+  
+  <div class="prev-next">
+    
+    
+    <a class='next' href='/2021/10/13/BSGS/'>
+      <p class='title'>BSGC(大步小步算法)<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+      <p class='content'>基础篇BSGS（baby-step giant-setp），即大步小步算法。常用于求解离散对数问题。形式化地说，该算法可以再 $\Theta(\sqrt p)$ 求解
+ $$a^x\equiv ...</p>
+    </a>
+    
+  </div>
   
 </article>
 
@@ -1008,10 +904,60 @@
 
 
 
+<script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
 </div>
-
-
-
       </div>
       
   

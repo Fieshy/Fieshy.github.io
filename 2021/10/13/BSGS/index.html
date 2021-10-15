@@ -16,7 +16,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>说说 - Fieshy&#39;s Blog</title>
+  <title>BSGC(大步小步算法) - Fieshy&#39;s Blog</title>
+  
+    <meta name="keywords" content="数论">
   
 
   
@@ -456,7 +458,7 @@
 
   
   
-      <div class='cover-wrapper page featured' style="display: none;">
+      <div class='cover-wrapper post featured' style="display: none;">
         <canvas id="header_canvas" style="position:absolute;bottom:0;z-index: 1;" width="900" height="350"></canvas>
         
           <div class='cover-bg lazyload placeholder' data-bg="https://i.loli.net/2021/09/30/Bk8HCwWx6O2UrQ3.jpg"></div>
@@ -535,8 +537,8 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">BSGC(大步小步算法)</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -545,14 +547,14 @@
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("none" == "none") { // 移除封面
+  if ("half" == "none") { // 移除封面
     document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("none" == "half") { // 半屏
+    if ("half" == "half") { // 半屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("none" == "full") { // 全屏
+    } else if ("half" == "full") { // 全屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
       document.getElementsByClassName('scroll-down')[0].style.display = "";
     }
@@ -659,160 +661,6 @@
     
     
 
-  
-
-  
-
-  
-    
-    
-
-<section class="widget text shadow floatable desktop">
-  
-  <header>
-    
-      <i class="fal fa-comments fa-fw" aria-hidden="true"></i><span class='name'>最新评论</span>
-    
-  </header>
-
-
-  <div class='content'>
-    
-      <div id="hot-comments"></div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget shadow floatable desktop mobile">
-  
-  <header>
-    
-      <i class="fal fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>9 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2021/08/12'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>7.8k 字</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Fri Oct 15 2021 20:16:39 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2021-10-15 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-10-15 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
 
 
   <section class="widget toc-wrapper shadow floatable desktop mobile" id="toc-div" >
@@ -825,7 +673,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#2021%E5%B9%B49%E6%9C%8818%E6%97%A5"><span class="toc-text">2021年9月18日</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2021%E5%B9%B48%E6%9C%8812%E6%97%A5-%E8%BF%99%E6%98%AF%E6%9C%AC%E4%BA%BA%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2"><span class="toc-text">2021年8月12日 这是本人的第一个个人博客</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%AF%87"><span class="toc-text">基础篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%8F%8F%E8%BF%B0"><span class="toc-text">算法描述</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E9%98%B6%E7%AF%87"><span class="toc-text">进阶篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%8F%8F%E8%BF%B0-1"><span class="toc-text">算法描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%BE%E5%88%B0%E6%89%80%E6%9C%89%E8%A7%A3"><span class="toc-text">找到所有解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8D%A2%E4%B8%80%E7%A7%8D%E6%80%9D%E8%B7%AF"><span class="toc-text">换一种思路</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -837,18 +685,34 @@
 
 <div class='l_main'>
   <article
-  class="article post white-box reveal md shadow floatable article-type-page"
-  id="page" itemscope itemprop="blogPost">
+  class="article post white-box reveal md shadow floatable article-type-post"
+  id="post" itemscope itemprop="blogPost">
   
 
 
   
   <div class="article-meta" id="top">
     
+      
+
+  
+    <meting-js
+      mini='true'
+      volume='0.7'
+      loop='all'
+      order='list'
+      server='netease'
+      type='song'
+      id='41650135'>
+    </meting-js>
+  
+
+
+    
     
     
       <h1 class="title">
-        说说
+        BSGC(大步小步算法)
       </h1>
       <div class='new-meta-box'>
         
@@ -872,7 +736,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fal fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2021年8月14日</p>
+    <p>发布于：2021年10月13日</p>
   </a>
 </div>
 
@@ -883,7 +747,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="说说" data-path="/bb/">
+      <div id="lc-pv" data-title="BSGC(大步小步算法)" data-path="/2021/10/13/BSGS/">
         <i class="fal fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -902,11 +766,70 @@
   
 
   
-  <h3 id="2021年9月18日"><a href="#2021年9月18日" class="headerlink" title="2021年9月18日"></a>2021年9月18日</h3><p>建站也有一个月了<br>中间大调小调<br><del>还差点丢了</del><br>目前总体表现良好<br>之后也会慢慢调<br>这里有人会弄暗黑模式吗？</p>
-<h3 id="2021年8月12日-这是本人的第一个个人博客"><a href="#2021年8月12日-这是本人的第一个个人博客" class="headerlink" title="2021年8月12日 这是本人的第一个个人博客"></a>2021年8月12日 这是本人的第一个个人博客</h3><p><del>由于本人是个蒟蒻，从8月初弄了好久才完成</del></p>
-<p>第一次建站还有诸多不妥之处，还请多指教</p>
-
+  <h2 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h2><p>BSGS（baby-step giant-setp），即大步小步算法。常用于求解离散对数问题。形式化地说，该算法可以再 $\Theta(\sqrt p)$ 求解</p>
+<p> $$a^x\equiv b~(\mod p)$$</p>
+<p>其中 $a\perp p$。（当前只需要 $a\perp p$ 即可不需要 $p$ 为素数）方程的解满足 $0\le x&lt;p$ 。</p>
+<h3 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h3><p>令 $x=A\lceil \sqrt p\rceil - B$，其中 $0\le A,B\le \lceil \sqrt p\rceil $，则有 $a^{A\lceil \sqrt p\rceil - B}\equiv b(\mod p)$，稍加变换，则有 $a^{A\lceil \sqrt q\rceil}\equiv ba^B(\mod p)$。</p>
+<p>我们已知 $a,b$，所以我们可以先算出等式右边 $ba^B$ 的所有取值，枚举 $B$，用hash/map存下来，然后逐一计算 $a^{A\lceil \sqrt q\rceil}$，枚举 $A$，寻找是否有与之相等的 $ba^B$，从而我们可以得到所有的 $x$，$x=A\lceil \sqrt p\rceil -B$。</p>
+<p>注意到 $A,B$ 均小于 $\lceil \sqrt p\rceil$，所以时间复杂度为 $\Theta(\sqrt p)$，用map则多一个 $\log$。</p>
+<h2 id="进阶篇"><a href="#进阶篇" class="headerlink" title="进阶篇"></a>进阶篇</h2><p>求解</p>
+<p>$$a^x\equiv b(\mod p)$$</p>
+<p>与上面基础篇不同的是，这里的条件是 $p$ 为质数。</p>
+<h3 id="算法描述-1"><a href="#算法描述-1" class="headerlink" title="算法描述"></a>算法描述</h3><p>承接上文的方法，将问题转化为 $a\perp p$。这时我们需要有关<a target="_blank" rel="noopener" href="https://oi-wiki.org/math/number-theory/primitive-root/">阶与原根</a>的知识。因为 $p$ 是一个质数，那么 $p$ 一定存在一个原根 $g$。因此对于模 $p$ 意义下的任意的数 $x(0\le x&lt;p)$ 有且仅有一个数 $i(0\le i&lt;p-1)$ 满足 $x=g^i$。</p>
+<ul>
+<li><p>方法一 </p>
+<p>我们令 $x=g^c$，$g$ 是 $p$ 的原根（我们一定可以找到这个 $g$ 和 $c$），问题转化为求解 $(g^c)^a\equiv b(\mod p)$。稍加变化，得到</p>
+<p>$$(g^a)^c\equiv b(\mod p)$$</p>
+<p>这就变成了我们熟识的基本BSGS模型，可以在 $\Theta(\sqrt p)$ 解出 $c$，这样可以得到原方程的一个特解 $x_0\equiv g^c(\mod p)$</p>
+</li>
+<li><p>方法二</p>
+<p>我们仍令 $x=g^c$，并且设 $b=g^t$， 于是我们得到</p>
+<p>$$g^{ac}\equiv g^t(\mod p)$$</p>
+<p>方程两边同时取离散对数得到</p>
+<p>$$ac=t(\mod \varphi(p))$$</p>
+<p>我们可以通过BSGS求解 $g^t\equiv b(\mod p)$ 得到 $t$，于是这就转化成了一个线性同余方程的问题，这样也可以解出 $c$，求出 $x$ 的一个特解 $x_0\equiv g^t(\mod p)$。</p>
+</li>
+</ul>
+<h3 id="找到所有解"><a href="#找到所有解" class="headerlink" title="找到所有解"></a>找到所有解</h3><p>在知道 $x_0\equiv g^t(\mod p)$ 的情况下，我们想得到原问题的所有解。首先我们知道 $g^{\varphi(p)}\equiv 1(\mod p)$， 于是可以得到</p>
+<p>$$\forall t\in \mathbb Z,x^a\equiv g^{ca+t\times\varphi(p)}\equiv b(\mod p)$$</p>
+<p>于是得到所有解为</p>
+<p>$$\forall t\in \mathbb Z,a\mid t\times\varphi(p),x\equiv g^{c+\frac{t\times\varphi(p)}{a}}(\mod p)$$</p>
+<p>对于上面这个式子，显然有 $\dfrac{a}{\gcd(a,\varphi(p))}\mid     t$。因此我们设 $t=\dfrac{a}{\gcd(a,\varphi(p))}\times i$，得到</p>
+<p>$$\forall i\in \mathbb Z,x\equiv g^{c+i\times\frac{\varphi(p)}{\gcd(a,\varphi(p))}}(\mod p)$$</p>
+<p>这就是原问题的所有解</p>
+<h3 id="换一种思路"><a href="#换一种思路" class="headerlink" title="换一种思路"></a>换一种思路</h3>
   
+  
+  
+  <div class='footer'>
+    
+    
+    
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fal fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="\2021\10\15\BSGS参考代码\" title="BSGS参考代码" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">BSGS参考代码</span></a><a class="item" href="\2021\08\14\题解：CF1279F New Year and Handle Change\" title="题解：CF1279F New Year and Handle Change" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">题解：CF1279F New Year and Handle Change</span></a></div></section></div>
+    
+    
+    <div class='copyright'>
+      <blockquote>
+        
+        
+        <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+        
+        
+        
+        <p>本文永久链接是：<a href=https://fieshy.github.io/2021/10/13/BSGS/>https://fieshy.github.io/2021/10/13/BSGS/</a></p>
+        
+        
+      </blockquote>
+    </div>
+    
+    
+  </div>
   
   
   
@@ -916,10 +839,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-09-18T15:00:59+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-10-15T20:15:32+08:00">
   <a class='notlink'>
     <i class="fal fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年9月18日</p>
+    <p>更新于：2021年10月15日</p>
   </a>
 </div>
 
@@ -927,6 +850,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E8%AE%BA/" rel="nofollow"><i class="fal fa-hashtag fa-fw" aria-hidden="true"></i><p>数论</p></a></div>
+
 
         
       
@@ -938,7 +864,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://fieshy.github.io/bb/index.html&title=说说 - Fieshy's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://fieshy.github.io/2021/10/13/BSGS/&title=BSGC(大步小步算法) - Fieshy's Blog&summary="
           
           >
           
@@ -950,7 +876,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://fieshy.github.io/bb/index.html&title=说说 - Fieshy's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://fieshy.github.io/2021/10/13/BSGS/&title=BSGC(大步小步算法) - Fieshy's Blog&summary="
           
           >
           
@@ -962,7 +888,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://fieshy.github.io/bb/index.html&title=说说 - Fieshy's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://fieshy.github.io/2021/10/13/BSGS/&title=BSGC(大步小步算法) - Fieshy's Blog&summary="
           
           >
           
@@ -988,7 +914,32 @@
 
   
   
+  
+  
+  
 
+  
+  <div class="prev-next">
+    
+    <a class='prev' href='/2021/10/15/BSGS%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81/'>
+      <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>BSGS参考代码</p>
+      <p class='content'>下面的代码实现的找原根、离散对数解和原问题所有解的过程。为进阶篇的参考代码：
+1234567891011121314151617181920212223242526272829303132333...</p>
+    </a>
+    
+    
+    <a class='next' href='/2021/10/04/%E9%A2%98%E8%A7%A3%EF%BC%9ACF1579G%20Minimal%20Coverage/'>
+      <p class='title'>题解：CF1579G Minimal Coverage<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+      <p class='content'>题意简析有多组数据
+
+            给你 $n$ 条线段，告诉你每条线段的长度。
+            
+
+            你需要把它们放在一条无限长的数轴上。
+      ...</p>
+    </a>
+    
+  </div>
   
 </article>
 
@@ -1008,10 +959,60 @@
 
 
 
+<script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
 </div>
-
-
-
       </div>
       
   
