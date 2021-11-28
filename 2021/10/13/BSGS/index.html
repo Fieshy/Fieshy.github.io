@@ -16,7 +16,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>BSGC(大步小步算法) - Fieshy&#39;s Blog</title>
+  <title>BSGS(大步小步算法) - Fieshy&#39;s Blog</title>
   
     <meta name="keywords" content="数论">
   
@@ -461,7 +461,7 @@
       <div class='cover-wrapper post featured' style="display: none;">
         <canvas id="header_canvas" style="position:absolute;bottom:0;z-index: 1;" width="900" height="350"></canvas>
         
-          <div class='cover-bg lazyload placeholder' data-bg="https://i.loli.net/2021/09/30/Bk8HCwWx6O2UrQ3.jpg"></div>
+          <div class='cover-bg lazyload placeholder' data-bg="https://img.wzf2000.top/image/2021/10/09/1484673e6a3ef.jpg"></div>
         
         <div class='cover-body'>
   <div class='top'>
@@ -538,7 +538,7 @@
 
 <div id="pjax-data" style="display: none">
   <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">BSGC(大步小步算法)</div>
+  <div id="pjax-pageTitle">BSGS(大步小步算法)</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -712,7 +712,7 @@
     
     
       <h1 class="title">
-        BSGC(大步小步算法)
+        BSGS(大步小步算法)
       </h1>
       <div class='new-meta-box'>
         
@@ -747,7 +747,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="BSGC(大步小步算法)" data-path="/2021/10/13/BSGS/">
+      <div id="lc-pv" data-title="BSGS(大步小步算法)" data-path="/2021/10/13/BSGS/">
         <i class="fal fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -766,39 +766,43 @@
   
 
   
-  <p>该篇中所有参考代码都将会放在 <a href="https://fieshy.github.io/2021/10/15/BSGS%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81"><strong>这里</strong></a></p>
+  <p>该篇中所有参考代码都将会放在 <a href="https://fieshy.github.io/2021/10/16/BSGS%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81"><strong>这里</strong></a></p>
 <h2 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h2><p>BSGS（baby-step giant-setp），即大步小步算法。常用于求解离散对数问题。形式化地说，该算法可以再 $\Theta(\sqrt p)$ 求解</p>
-<p> $$a^x\equiv b~(\mod p)$$</p>
+<p> $$a^x\equiv b\pmod p$$</p>
 <p>其中 $a\perp p$。（当前只需要 $a\perp p$ 即可不需要 $p$ 为素数）方程的解满足 $0\le x&lt;p$ 。</p>
-<h3 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h3><p>令 $x=A\lceil \sqrt p\rceil - B$，其中 $0\le A,B\le \lceil \sqrt p\rceil $，则有 $a^{A\lceil \sqrt p\rceil - B}\equiv b(\mod p)$，稍加变换，则有 $a^{A\lceil \sqrt q\rceil}\equiv ba^B(\mod p)$。</p>
+<h3 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h3><p>令 $x=A\lceil \sqrt p\rceil - B$，其中 $0\le A,B\le \lceil \sqrt p\rceil $，则有 $a^{A\lceil \sqrt p\rceil - B}\equiv b\pmod p$，稍加变换，则有 $a^{A\lceil \sqrt q\rceil}\equiv ba^B\pmod p$。</p>
 <p>我们已知 $a,b$，所以我们可以先算出等式右边 $ba^B$ 的所有取值，枚举 $B$，用hash/map存下来，然后逐一计算 $a^{A\lceil \sqrt q\rceil}$，枚举 $A$，寻找是否有与之相等的 $ba^B$，从而我们可以得到所有的 $x$，$x=A\lceil \sqrt p\rceil -B$。</p>
 <p>注意到 $A,B$ 均小于 $\lceil \sqrt p\rceil$，所以时间复杂度为 $\Theta(\sqrt p)$，用map则多一个 $\log$。</p>
 <h2 id="进阶篇"><a href="#进阶篇" class="headerlink" title="进阶篇"></a>进阶篇</h2><p>求解</p>
-<p>$$a^x\equiv b(\mod p)$$</p>
+<p>$$a^x\equiv b\pmod p$$</p>
 <p>与上面基础篇不同的是，这里的条件是 $p$ 为质数。</p>
 <h3 id="算法描述-1"><a href="#算法描述-1" class="headerlink" title="算法描述"></a>算法描述</h3><p>承接上文的方法，将问题转化为 $a\perp p$。这时我们需要有关<a target="_blank" rel="noopener" href="https://oi-wiki.org/math/number-theory/primitive-root/">阶与原根</a>的知识。因为 $p$ 是一个质数，那么 $p$ 一定存在一个原根 $g$。因此对于模 $p$ 意义下的任意的数 $x(0\le x&lt;p)$ 有且仅有一个数 $i(0\le i&lt;p-1)$ 满足 $x=g^i$。</p>
 <ul>
 <li><p>方法一 </p>
-<p>我们令 $x=g^c$，$g$ 是 $p$ 的原根（我们一定可以找到这个 $g$ 和 $c$），问题转化为求解 $(g^c)^a\equiv b(\mod p)$。稍加变化，得到</p>
-<p>$$(g^a)^c\equiv b(\mod p)$$</p>
-<p>这就变成了我们熟识的基本BSGS模型，可以在 $\Theta(\sqrt p)$ 解出 $c$，这样可以得到原方程的一个特解 $x_0\equiv g^c(\mod p)$</p>
+<p>我们令 $x=g^c$，$g$ 是 $p$ 的原根（我们一定可以找到这个 $g$ 和 $c$），问题转化为求解 $(g^c)^a\equiv b\pmod p$。稍加变化，得到</p>
+<p>$$(g^a)^c\equiv b\pmod p$$</p>
+<p>这就变成了我们熟识的基本BSGS模型，可以在 $\Theta(\sqrt p)$ 解出 $c$，这样可以得到原方程的一个特解 $x_0\equiv g^c\pmod p$</p>
 </li>
 <li><p>方法二</p>
 <p>我们仍令 $x=g^c$，并且设 $b=g^t$， 于是我们得到</p>
-<p>$$g^{ac}\equiv g^t(\mod p)$$</p>
+<p>$$g^{ac}\equiv g^t\pmod p$$</p>
 <p>方程两边同时取离散对数得到</p>
-<p>$$ac=t(\mod \varphi(p))$$</p>
-<p>我们可以通过BSGS求解 $g^t\equiv b(\mod p)$ 得到 $t$，于是这就转化成了一个线性同余方程的问题，这样也可以解出 $c$，求出 $x$ 的一个特解 $x_0\equiv g^t(\mod p)$。</p>
+<p>$$ac=t\pmod{ \varphi(p)}$$</p>
+<p>我们可以通过BSGS求解 $g^t\equiv b\pmod p$ 得到 $t$，于是这就转化成了一个线性同余方程的问题，这样也可以解出 $c$，求出 $x$ 的一个特解 $x_0\equiv g^t\pmod p$。</p>
 </li>
 </ul>
-<h3 id="找到所有解"><a href="#找到所有解" class="headerlink" title="找到所有解"></a>找到所有解</h3><p>在知道 $x_0\equiv g^t(\mod p)$ 的情况下，我们想得到原问题的所有解。首先我们知道 $g^{\varphi(p)}\equiv 1(\mod p)$， 于是可以得到</p>
-<p>$$\forall t\in \mathbb Z,x^a\equiv g^{ca+t\times\varphi(p)}\equiv b(\mod p)$$</p>
+<h3 id="找到所有解"><a href="#找到所有解" class="headerlink" title="找到所有解"></a>找到所有解</h3><p>在知道 $x_0\equiv g^t\pmod p$ 的情况下，我们想得到原问题的所有解。首先我们知道 $g^{\varphi(p)}\equiv 1\pmod p$， 于是可以得到</p>
+<p>$$\forall t\in \mathbb Z,x^a\equiv g^{ca+t\times\varphi(p)}\equiv b\pmod p$$</p>
 <p>于是得到所有解为</p>
-<p>$$\forall t\in \mathbb Z,a\mid t\times\varphi(p),x\equiv g^{c+\frac{t\times\varphi(p)}{a}}(\mod p)$$</p>
+<p>$$\forall t\in \mathbb Z,a\mid t\times\varphi(p),x\equiv g^{c+\frac{t\times\varphi(p)}{a}}\pmod p$$</p>
 <p>对于上面这个式子，显然有 $\dfrac{a}{\gcd(a,\varphi(p))}\mid     t$。因此我们设 $t=\dfrac{a}{\gcd(a,\varphi(p))}\times i$，得到</p>
-<p>$$\forall i\in \mathbb Z,x\equiv g^{c+i\times\frac{\varphi(p)}{\gcd(a,\varphi(p))}}(\mod p)$$</p>
+<p>$$\forall i\in \mathbb Z,x\equiv g^{c+i\times\frac{\varphi(p)}{\gcd(a,\varphi(p))}}\pmod p$$</p>
 <p>这就是原问题的所有解</p>
-<h3 id="换一种思路"><a href="#换一种思路" class="headerlink" title="换一种思路"></a>换一种思路</h3>
+<h3 id="换一种思路"><a href="#换一种思路" class="headerlink" title="换一种思路"></a>换一种思路</h3><div class="note"><p>如果我们把这道题当成一道全新的题，我们该如何思考？？</p></div>
+
+<p>令 $x=i\times m-j$，其中 $m=\lceil \sqrt p\rceil$。这样原式就变成</p>
+<p>$$a^{i\times m-j}\equiv b\pmod p$$</p>
+
   
   
   
@@ -840,10 +844,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-10-15T20:25:37+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-11-28T15:44:51+08:00">
   <a class='notlink'>
     <i class="fal fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年10月15日</p>
+    <p>更新于：2021年11月28日</p>
   </a>
 </div>
 
@@ -865,7 +869,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://fieshy.github.io/2021/10/13/BSGS/&title=BSGC(大步小步算法) - Fieshy's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://fieshy.github.io/2021/10/13/BSGS/&title=BSGS(大步小步算法) - Fieshy's Blog&summary="
           
           >
           
@@ -877,7 +881,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://fieshy.github.io/2021/10/13/BSGS/&title=BSGC(大步小步算法) - Fieshy's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://fieshy.github.io/2021/10/13/BSGS/&title=BSGS(大步小步算法) - Fieshy's Blog&summary="
           
           >
           
@@ -889,7 +893,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://fieshy.github.io/2021/10/13/BSGS/&title=BSGC(大步小步算法) - Fieshy's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://fieshy.github.io/2021/10/13/BSGS/&title=BSGS(大步小步算法) - Fieshy's Blog&summary="
           
           >
           
@@ -2112,4 +2116,5 @@ valine.Q('*').limit(7).find().then(function (comments) {
   <script type="text/javascript"
   color="220,220,220" opacity='1.0' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
   </script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":250,"height":500},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":250,"height":500},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
